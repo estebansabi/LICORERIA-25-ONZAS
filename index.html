@@ -1,148 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi catálogo de productos</title>
-  <link rel="stylesheet" href="style.css">
-
-</a>
-
-<style>
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/573209116861" 
-   class="whatsapp-float" 
-   target="_blank">
-  💬 WhatsApp
-</a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
-  z-index: 1000;
-}
-.whatsapp-float:hover {
-  background-color: #1ebe5d;
-}
-</style>
-
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/573209116861" 
-   class="whatsapp-float" 
-   target="_blank">
-  💬 WhatsApp
-</a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
-  z-index: 1000;
-}
-.whatsapp-float:hover {
-  background-color: #1ebe5d;
-}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Licorería 25 Onzas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #b5179e, #7209b7);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .section {
+      background: #fff;
+      margin: 1.2rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+    }
+    .section h2 {
+      margin-top: 0;
+      color: #7209b7;
+      font-size: 1.3rem;
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0.5rem 0;
+    }
+    .info i {
+      font-style: normal;
+      color: #b5179e;
+      font-weight: bold;
+    }
+    .social a {
+      display: inline-block;
+      margin: 0.3rem;
+      padding: 0.6rem 1rem;
+      background: #7209b7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 2rem;
+      font-size: 0.95rem;
+      transition: background 0.3s;
+    }
+    .social a:hover {
+      background: #b5179e;
+    }
+    @media (min-width: 700px) {
+      body { max-width: 600px; margin: auto; }
+    }
+  </style>
+</head>
 <body>
 
-  <h1>Mi Catálogo de Productos</h1>
-<!-- Información de la tienda -->
-<!-- Sección estilo AppFenix con datos reales -->
-<div class="info-tienda-appfenix">
-  <div class="info-item">
-    <img src="https://img.icons8.com/color/48/000000/marker.png" alt="Ubicación">
-    <div>
-      <h3>Ubicación</h3>
-      <p>Calle 22 #20-67, Paipa</p>
+  <header>
+    <h1>LICORERÍA 25 ONZAS</h1>
+    <p>Tu punto ideal para cada celebración 🎉</p>
+  </header>
+
+  <section class="section">
+    <h2>📍 Ubicación</h2>
+    <div class="info">
+      <i>📌</i> Calle 22 #20-67, Paipa
     </div>
-  </div>
-
-  <div class="info-item">
-    <img src="https://img.icons8.com/color/48/000000/clock.png" alt="Horario">
-    <div>
-      <h3>Horarios</h3>
-      <p>Lunes a Jueves: 10:00 am – 8:30 pm<br>Viernes y Sábado: 10:00 am – 11:59 pm</p>
+    <div class="info">
+      <i>🗺️</i> <a href="https://maps.app.goo.gl/" target="_blank">Ver en Google Maps</a>
     </div>
-  </div>
+  </section>
 
-  <div class="info-item">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
-    <div>
-      <h3>WhatsApp</h3>
-      <p><a href="https://wa.me/573209116861" target="_blank">3209116861</a></p>
+  <section class="section">
+    <h2>🕒 Horarios</h2>
+    <div class="info">Lunes a Jueves: 10:00 am - 8:30 pm</div>
+    <div class="info">Viernes y Sábado: 10:00 am - 11:59 pm</div>
+  </section>
+
+  <section class="section">
+    <h2>📞 Contáctanos</h2>
+    <div class="info">
+      <i>💬</i> <a href="https://wa.me/57XXXXXXXXXX" target="_blank">WhatsApp</a>
     </div>
-  </div>
-
-  <div class="info-item">
-    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
-    <div>
-      <h3>Instagram</h3>
-      <p><a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">@25.onzas</a></p>
+    <div class="social">
+      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">📸 Instagram</a>
     </div>
-  </div>
-</div>
-
-  <!-- BOTONES DE CATEGORÍAS -->
-  <div class="categorias">
-    <button onclick="filtrar('todo')">Todos</button>
-    <button onclick="filtrar('bebidas')">WHISKY</button>
-    <button onclick="filtrar('ropa')">TEQUILA</button>
-    <button onclick="filtrar('electronica')">VINOS</button>
-  </div>
-
-  <!-- PRODUCTOS -->
-  <div class="productos">
-    <div class="producto" data-categoria="WHISKY">
-      <img src="producto1.jpg.jpeg" alt="Producto ejemplo" width="200">
-      <h3>Producto Bebida</h3>
-      <p>$176.000</p>
-        <p>Singleton 12 años Single Malt</p>
-    </div>
-
-    <div class="producto" data-categoria="ropa">
-      <img src="producto2.jpg.jpeg" alt="Producto ropa" width="200">
-      <h3>Producto Ropa</h3>
-      <p>$59.900</p>
-    </div>
-
-    <div class="producto" data-categoria="electronica">
-      <img src="producto3.jpg.jpeg" alt="Producto electrónico" width="200">
-      <h3>Producto Electrónico</h3>
-      <p>$199.900</p>
-    </div>
-  </div>
-
-  <script>
-    function filtrar(categoria) {
-      const productos = document.querySelectorAll('.producto');
-      productos.forEach(p => {
-        if (categoria === 'todo' || p.dataset.categoria === categoria) {
-          p.style.display = 'block';
-        } else {
-          p.style.display = 'none';
-        }
-      });
-    }
-  </script>
+  </section>
 
 </body>
 </html>
