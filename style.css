@@ -61,6 +61,23 @@ h1 {
 .categorias button:hover {
   background: #c2185b;
 }
+/* Diseño responsive para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .productos {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .producto {
+    width: 90%;
+  }
+
+  .categorias button {
+    padding: 8px 12px;
+    margin: 3px;
+  }
+}
 
 
 .producto p {
