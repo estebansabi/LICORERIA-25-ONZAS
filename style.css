@@ -89,4 +89,28 @@ h1 {
   color: #e91e63;
   font-weight: bold;
 }
+.info-tienda {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.info-tienda h2 {
+  margin-top: 0;
+  color: #007BFF;
+}
+.info-tienda p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+.info-tienda a {
+  color: #25D366;
+  text-decoration: none;
+  font-weight: bold;
+}
+.info-tienda a:hover {
+  text-decoration: underline;
+}
 
