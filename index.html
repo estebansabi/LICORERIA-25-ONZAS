@@ -9,14 +9,47 @@
 
   <h1>Mi Catálogo de Productos</h1>
 
+  <!-- BOTONES DE CATEGORÍAS -->
+  <div class="categorias">
+    <button onclick="filtrar('todo')">Todos</button>
+    <button onclick="filtrar('bebidas')">Bebidas</button>
+    <button onclick="filtrar('ropa')">Ropa</button>
+    <button onclick="filtrar('electronica')">Electrónica</button>
+  </div>
+
+  <!-- PRODUCTOS -->
   <div class="productos">
-    <div class="producto">
+    <div class="producto" data-categoria="bebidas">
       <img src="producto1.jpg.jpeg" alt="Producto ejemplo" width="200">
-      <h3>Nombre del producto</h3>
+      <h3>Producto Bebida</h3>
       <p>$99.900</p>
+    </div>
+
+    <div class="producto" data-categoria="ropa">
+      <img src="producto2.jpg.jpeg" alt="Producto ropa" width="200">
+      <h3>Producto Ropa</h3>
+      <p>$59.900</p>
+    </div>
+
+    <div class="producto" data-categoria="electronica">
+      <img src="producto3.jpg.jpeg" alt="Producto electrónico" width="200">
+      <h3>Producto Electrónico</h3>
+      <p>$199.900</p>
     </div>
   </div>
 
+  <script>
+    function filtrar(categoria) {
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(p => {
+        if (categoria === 'todo' || p.dataset.categoria === categoria) {
+          p.style.display = 'block';
+        } else {
+          p.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
-
