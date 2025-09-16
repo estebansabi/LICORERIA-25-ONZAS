@@ -78,6 +78,11 @@ h1 {
     margin: 3px;
   }
 }
+.producto p:nth-of-type(2) {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 5px 0 10px;
+}
 
 
 .producto p {
