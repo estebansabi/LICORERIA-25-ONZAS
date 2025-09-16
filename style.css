@@ -42,6 +42,26 @@ h1 {
   margin: 10px 0 5px;
   color: #555;
 }
+.categorias {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.categorias button {
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.categorias button:hover {
+  background: #c2185b;
+}
+
 
 .producto p {
   color: #e91e63;
