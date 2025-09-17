@@ -181,20 +181,31 @@ h1 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
   z-index: 1000;              /* Que quede encima de todo */
 }
+/* Barra fija superior */
+#barra {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* puedes poner otro color si deseas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
 
 #barra img {
-  max-width: 180px;            /* Tamaño máximo del logo */
+  max-width: 180px;
   height: auto;
 }
 
-/* Ajusta el espacio del contenido para que no quede debajo del header fijo */
+/* Para que el contenido no quede tapado */
 body {
-  padding-top: 100px;           /* Igual o un poco mayor que la altura del #barra */
+  padding-top: 100px;
 }
 
 
-}
-.info-tienda a:hover {
-  text-decoration: underline;
-}
+
 
