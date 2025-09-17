@@ -4,141 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Licorería 25 Onzas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #FFFFFF;
       color: #15392A;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
     header {
-      text-align: center;
+      background-color: #FFFFFF;
       padding: 20px;
       border-bottom: 2px solid #15392A;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 600;
+    header img {
+      width: 150px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    h1 {
+      margin: 10px 0;
+      color: #15392A;
     }
     .info {
-      text-align: center;
-      margin: 15px 0;
+      margin: 20px 0;
     }
     .info a {
       color: #15392A;
       text-decoration: none;
-      font-weight: 600;
-      display: block;
-      margin: 5px 0;
+      display: inline-block;
+      margin: 5px 10px;
+      border: 1px solid #15392A;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
-    .categorias {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-    .categoria {
-      background: #15392A;
+    .info a:hover {
+      background-color: #15392A;
       color: #FFFFFF;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .categoria:hover {
-      background: #0f2a1f;
     }
     .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
       padding: 20px;
-      max-width: 1000px;
-      margin: auto;
     }
     .producto {
-      background: #f7f7f7;
-      border-radius: 10px;
+      border: 1px solid #15392A;
       padding: 15px;
-      text-align: center;
-      color: #15392A;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 200px;
+      border-radius: 10px;
     }
     .producto img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
       border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 28px;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/LOGO1.JPG.jpg" alt="Logo Licorería">
     <h1>Licorería 25 Onzas</h1>
-    <div class="info">
-      <p>📍 Calle 22 #20-67, Paipa</p>
-      <p>🕓 Lun-Jue 10:00am–8:30pm | Vie-Sáb 10:00am–11:59pm</p>
-      <a href="https://wa.me/573209116861" target="_blank">📱 WhatsApp</a>
-      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">📸 Instagram</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank">🗺️ Ver en Google Maps</a>
-    </div>
   </header>
 
-  <div class="categorias">
-    <div class="categoria" onclick="filtrar('cervezas')">Cervezas</div>
-    <div class="categoria" onclick="filtrar('vinos')">Vinos</div>
-    <div class="categoria" onclick="filtrar('licores')">Licores</div>
-    <div class="categoria" onclick="filtrar('todos')">Todos</div>
+  <div class="info">
+    <p><strong>Ubicación:</strong> Calle 22 #20-67, Paipa</p>
+    <p><strong>Horario:</strong> Lun-Jue 10:00am - 8:30pm / Vie-Sáb 10:00am - 11:59pm</p>
+    <a href="https://wa.me/573209116861" target="_blank">📲 WhatsApp</a>
+    <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">📷 Instagram</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank">📍 Ver en Google Maps</a>
   </div>
 
-  <div class="productos" id="lista-productos">
-    <div class="producto" data-cat="cervezas">
-      <img src="producto1.jpg.jpeg" alt="Producto ejemplo">
-      <h3>SINGLETON 12 AÑOS Single Malt</h3>
-      <p>$176.000</p>
-    </div>
-    <div class="producto" data-cat="vinos">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Red_Wine_Glass.jpg" alt="Vino tinto">
-      <h3>Vino Tinto Rosaleda</h3>
-      <p>$35.000</p>
-    </div>
-    <div class="producto" data-cat="licores">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Ron_Bacardi.jpg" alt="Ron Bacardí">
-      <h3>Ron Bacardí 750ml</h3>
-      <p>$60.000</p>
+  <h2>Productos</h2>
+  <div class="productos">
+    <div class="producto">
+      <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
+      <h3>Nombre del Producto</h3>
+      <p>$Precio</p>
     </div>
   </div>
-
-  <a href="https://wa.me/573209116861" class="whatsapp-btn" target="_blank">💬</a>
-
-  <script>
-    function filtrar(categoria) {
-      const productos = document.querySelectorAll('.producto');
-      productos.forEach(p => {
-        p.style.display = (categoria === 'todos' || p.dataset.cat === categoria) ? 'block' : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
