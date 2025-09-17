@@ -14,19 +14,24 @@
       padding: 0;
       text-align: center;
     }
-    /* Barra superior fija */
+    /* Barra superior fija animada */
     header {
       position: fixed;
-      top: 0;
+      top: -100px;
       left: 0;
       width: 100%;
-      background-color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.95);
       border-bottom: 2px solid #15392A;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 10px 0;
       z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: top 0.6s ease;
+    }
+    header.visible {
+      top: 0;
     }
     header img {
       width: 60px;
@@ -42,7 +47,7 @@
     }
 
     .contenido {
-      margin-top: 100px; /* separa el contenido para que no quede tapado por la barra fija */
+      margin-top: 100px; 
     }
 
     .info {
@@ -75,6 +80,12 @@
       padding: 15px;
       width: 200px;
       border-radius: 10px;
+      background: #ffffff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
     .producto img {
       width: 100%;
@@ -84,7 +95,7 @@
 </head>
 <body>
   <!-- Barra fija -->
-  <header>
+  <header id="barra">
     <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/LOGO1.JPG.jpg" alt="Logo Licorería">
     <h1>Licorería 25 Onzas</h1>
   </header>
@@ -108,5 +119,17 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Mostrar la barra cuando el usuario hace scroll hacia abajo
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('barra');
+      if (window.scrollY > 20) {
+        header.classList.add('visible');
+      } else {
+        header.classList.remove('visible');
+      }
+    });
+  </script>
 </body>
 </html>
