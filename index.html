@@ -14,20 +14,37 @@
       padding: 0;
       text-align: center;
     }
+    /* Barra superior fija */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background-color: #FFFFFF;
-      padding: 20px;
       border-bottom: 2px solid #15392A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 1000;
     }
     header img {
-      width: 150px;
-      display: block;
-      margin: 0 auto 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
     }
-    h1 {
-      margin: 10px 0;
+    header h1 {
+      font-size: 20px;
+      margin: 0;
       color: #15392A;
     }
+
+    .contenido {
+      margin-top: 100px; /* separa el contenido para que no quede tapado por la barra fija */
+    }
+
     .info {
       margin: 20px 0;
     }
@@ -45,6 +62,7 @@
       background-color: #15392A;
       color: #FFFFFF;
     }
+
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -65,25 +83,29 @@
   </style>
 </head>
 <body>
+  <!-- Barra fija -->
   <header>
     <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/LOGO1.JPG.jpg" alt="Logo Licorería">
     <h1>Licorería 25 Onzas</h1>
   </header>
 
-  <div class="info">
-    <p><strong>Ubicación:</strong> Calle 22 #20-67, Paipa</p>
-    <p><strong>Horario:</strong> Lun-Jue 10:00am - 8:30pm / Vie-Sáb 10:00am - 11:59pm</p>
-    <a href="https://wa.me/573209116861" target="_blank">📲 WhatsApp</a>
-    <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">📷 Instagram</a>
-    <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank">📍 Ver en Google Maps</a>
-  </div>
+  <!-- Contenido principal -->
+  <div class="contenido">
+    <div class="info">
+      <p><strong>Ubicación:</strong> Calle 22 #20-67, Paipa</p>
+      <p><strong>Horario:</strong> Lun-Jue 10:00am - 8:30pm / Vie-Sáb 10:00am - 11:59pm</p>
+      <a href="https://wa.me/573209116861" target="_blank">📲 WhatsApp</a>
+      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">📷 Instagram</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank">📍 Ver en Google Maps</a>
+    </div>
 
-  <h2>Productos</h2>
-  <div class="productos">
-    <div class="producto">
-      <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-      <h3>Nombre del Producto</h3>
-      <p>$Precio</p>
+    <h2>Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
+        <h3>Nombre del Producto</h3>
+        <p>$Precio</p>
+      </div>
     </div>
   </div>
 </body>
