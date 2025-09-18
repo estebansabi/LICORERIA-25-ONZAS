@@ -1,3 +1,4 @@
+/* --- INFO DE LA TIENDA --- */
 .info-tienda-appfenix {
   display: flex;
   flex-wrap: wrap;
@@ -55,11 +56,13 @@
   }
 }
 
+/* --- GENERAL --- */
 body {
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   margin: 0;
   padding: 0;
+  padding-top: 120px; /* deja espacio para la barra fija */
 }
 
 h1 {
@@ -68,6 +71,7 @@ h1 {
   margin-top: 30px;
 }
 
+/* --- PRODUCTOS --- */
 .productos {
   display: flex;
   flex-wrap: wrap;
@@ -99,6 +103,19 @@ h1 {
   margin: 10px 0 5px;
   color: #555;
 }
+
+.producto p:nth-of-type(2) {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 5px 0 10px;
+}
+
+.producto p {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+/* --- CATEGORÍAS --- */
 .categorias {
   text-align: center;
   margin-top: 20px;
@@ -118,7 +135,8 @@ h1 {
 .categorias button:hover {
   background: #c2185b;
 }
-/* Diseño responsive para dispositivos móviles */
+
+/* Responsive para móviles */
 @media screen and (max-width: 768px) {
   .productos {
     flex-direction: column;
@@ -135,17 +153,8 @@ h1 {
     margin: 3px;
   }
 }
-.producto p:nth-of-type(2) {
-  color: #555;
-  font-size: 0.9rem;
-  margin: 5px 0 10px;
-}
 
-
-.producto p {
-  color: #e91e63;
-  font-weight: bold;
-}
+/* --- INFO INFERIOR --- */
 .info-tienda {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -154,64 +163,39 @@ h1 {
   margin-bottom: 20px;
   text-align: left;
 }
+
 .info-tienda h2 {
   margin-top: 0;
   color: #007BFF;
 }
+
 .info-tienda p {
   margin: 5px 0;
   font-size: 0.95rem;
 }
+
 .info-tienda a {
   color: #25D366;
   text-decoration: none;
   font-weight: bold;
-  /* Estilos para la barra con el logo */
-/* Barra fija superior con el logo */
-#barra {
-  position: fixed;          /* Hace que quede fijo */
-  top: 0;                    /* Pegado arriba */
-  left: 0;
-  width: 100%;               /* Que ocupe todo el ancho */
-  background-color: #fff;    /* Fondo blanco */
-  display: flex;
-  justify-content: center;   /* Centra el logo horizontalmente */
-  align-items: center;       /* Centra el logo verticalmente */
-  padding: 15px 0;            /* Espacio interno */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
-  z-index: 1000;              /* Que quede encima de todo */
 }
-/* Barra fija superior */
+
+/* --- BARRA FIJA SUPERIOR CON LOGO --- */
 #barra {
-  position: fixed;
-  top: 0;
+  position: fixed;          
+  top: 0;                    
   left: 0;
-  width: 100%;
-  background-color: #fff; /* puedes poner otro color si deseas */
+  width: 100%;               
+  background-color: #fff;    
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 0;
+  justify-content: center;   
+  align-items: center;       
+  padding: 15px 0;            
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
+  z-index: 1000;              
 }
 
 #barra img {
   max-width: 180px;
   height: auto;
-}
-
-/* Para que el contenido no quede tapado */
-body {
-  padding-top: 100px;
-}
-header {
-  position: fixed;   /* Hace que el encabezado se quede fijo */
-  top: 0;             /* Lo fija en la parte superior */
-  left: 0;             /* Lo alinea al borde izquierdo */
-  width: 100%;         /* Que ocupe todo el ancho */
-  z-index: 1000;       /* Para que quede encima de otros elementos */
-}
-main {
-  margin-top: 100px; /* Ajusta este valor a la altura real de tu encabezado */
 }
