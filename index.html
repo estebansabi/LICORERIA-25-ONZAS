@@ -2,122 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Licorería 25 Onzas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <title>Botones Interactivos</title>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #FFFFFF;
-      color: #15392A;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    /* Barra superior fija */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-bottom: 2px solid #15392A;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: center;
-      padding: 10px 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 10px;
-    }
-
-    header h1 {
-      font-size: 20px;
+      height: 100vh;
       margin: 0;
-      color: #15392A;
     }
 
-    /* margen para que el contenido no quede tapado */
-    .contenido {
-      margin-top: 100px; 
-    }
-
-    .info {
-      margin: 20px 0;
-    }
-    .info a {
-      color: #15392A;
-      text-decoration: none;
-      display: inline-block;
-      margin: 5px 10px;
-      border: 1px solid #15392A;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-    .info a:hover {
-      background-color: #15392A;
-      color: #FFFFFF;
-    }
-
-    .productos {
+    .botones-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 20px;
-      padding: 20px;
     }
-    .producto {
-      border: 1px solid #15392A;
-      padding: 15px;
-      width: 200px;
-      border-radius: 10px;
-      background: #ffffff;
-      transition: transform 0.3s, box-shadow 0.3s;
+
+    .boton {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
     }
-    .producto:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    .boton:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
-    .producto img {
-      width: 100%;
-      border-radius: 10px;
+
+    .boton:active {
+      transform: scale(0.9);
+    }
+
+    .whatsapp { background: #25D366; }
+    .instagram {
+      background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    }
+    .ubicacion { background: #ff5722; }
+
+    /* Iconos */
+    .boton i {
+      pointer-events: none;
     }
   </style>
+  <!-- Iconos FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Barra fija -->
-  <header>
-    <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/LOGO1.JPG.jpg" alt="Logo Licorería">
-    <h1>Licorería 25 Onzas</h1>
-  </header>
 
-  <!-- Contenido principal -->
-  <div class="contenido">
-    <div class="info">
-      <p><strong>Ubicación:</strong> Calle 22 #20-67, Paipa</p>
-      <p><strong>Horario:</strong> Lun-Jue 10:00am - 8:30pm / Vie-Sáb 10:00am - 11:59pm</p>
-      <a href="https://wa.me/573209116861" target="_blank">📲 WhatsApp</a>
-      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">📷 Instagram</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank">📍 Ver en Google Maps</a>
-    </div>
+  <div class="botones-container">
+    <a href="https://wa.me/573001112233" class="boton whatsapp" onclick="playSound()">
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <h2>Productos</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-        <h3>Nombre del Producto</h3>
-        <p>$Precio</p>
-      </div>
-    </div>
+    <a href="https://www.instagram.com/tuusuario" class="boton instagram" onclick="playSound()">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://maps.app.goo.gl/XXXXXXXX" class="boton ubicacion" onclick="playSound()">
+      <i class="fas fa-map-marker-alt"></i>
+    </a>
   </div>
+
+  <audio id="clickSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" preload="auto"></audio>
+
+  <script>
+    function playSound() {
+      document.getElementById('clickSound').play();
+    }
+  </script>
+
 </body>
 </html>
