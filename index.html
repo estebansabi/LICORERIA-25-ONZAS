@@ -15,7 +15,6 @@
       text-align: center;
     }
 
-    /* Barra superior fija */
     header {
       position: fixed;
       top: 0;
@@ -49,7 +48,6 @@
       margin-top: 120px; 
     }
 
-    /* Tarjetas info */
     .info-cards {
       display: flex;
       justify-content: center;
@@ -91,7 +89,6 @@
       margin-bottom: 8px;
     }
 
-    /* Botones de redes */
     .info-buttons {
       display: flex;
       flex-direction: column;
@@ -119,17 +116,12 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.2);
     }
 
-    .btn-whatsapp {
-      background-color: #25D366;
-    }
+    .btn-whatsapp { background-color: #25D366; }
     .btn-instagram {
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
-    .btn-maps {
-      background-color: #4285F4;
-    }
+    .btn-maps { background-color: #4285F4; }
 
-    /* Productos */
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -172,7 +164,6 @@
       background-color: #1f5b42;
     }
 
-    /* Carrito flotante */
     #carrito {
       position: fixed;
       bottom: 20px;
@@ -189,21 +180,18 @@
   </style>
 </head>
 <body>
-  <!-- Barra fija -->
   <header>
     <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/LOGO1.JPG.jpg" alt="Logo Licorería">
     <h1>Licorería 25 Onzas</h1>
   </header>
 
   <div class="contenido">
-    <!-- Tarjetas de ubicación y horario -->
     <div class="info-cards">
       <div class="info-card">
         <div class="info-icon">📍</div>
         <h3>Ubicación</h3>
         <p>Calle 22 #20-67<br>Paipa</p>
       </div>
-
       <div class="info-card">
         <div class="info-icon">⏰</div>
         <h3>Horario</h3>
@@ -211,7 +199,6 @@
       </div>
     </div>
 
-    <!-- Botones interactivos -->
     <div class="info-buttons">
       <a href="https://wa.me/573209116861" target="_blank" class="btn-whatsapp" onclick="reproducirSonido()">📲 WhatsApp</a>
       <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="btn-instagram" onclick="reproducirSonido()">📷 Instagram</a>
@@ -235,10 +222,8 @@
     </div>
   </div>
 
-  <!-- Botón flotante de carrito -->
   <div id="carrito" onclick="enviarPedido()">🛒 0</div>
 
-  <!-- Sonido "push" -->
   <audio id="sonidoPush" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg" preload="auto"></audio>
 
   <script>
@@ -264,11 +249,18 @@
       const telefonoCliente = prompt("Ingresa tu número de contacto:");
       if (!nombreCliente || !telefonoCliente) return;
 
-      let encabezado = `📋 *Cotización*\nLaura Sofia Mateus Mateus\nNIT: 1032473461\nCalle 22 N° 20-67 Paipa Boyacá\nfacturacion.25onzas@gmail.com\n\n👤 Cliente: ${nombreCliente}\n📱 Tel: ${telefonoCliente}\n\n🛒 *Productos:*\n`;
+      let mensaje = `🧾 *Cotización*\n`;
+      mensaje += `👤 *Laura Sofia Mateus Mateus*\n`;
+      mensaje += `🆔 NIT: 1032473461\n`;
+      mensaje += `📍 Calle 22 N° 20-67 Paipa - Boyacá\n`;
+      mensaje += `📧 facturacion.25onzas@gmail.com\n\n`;
+      mensaje += `👤 *Cliente:* ${nombreCliente}\n`;
+      mensaje += `📱 *Tel:* ${telefonoCliente}\n\n`;
+      mensaje += `📦 *Productos solicitados:*\n`;
 
-      let productos = carrito.map((item, i) => `${i+1}. ${item.nombre} - $${item.precio}`).join("\n");
-
-      let mensaje = encabezado + productos;
+      carrito.forEach((item, i) => {
+        mensaje += `${i+1}. ${item.nombre} - $${item.precio}\n`;
+      });
 
       const url = `https://wa.me/573209116861?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
