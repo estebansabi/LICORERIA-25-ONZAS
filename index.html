@@ -45,12 +45,11 @@
       color: #15392A;
     }
 
-    /* margen para que el contenido no quede tapado */
     .contenido {
-      margin-top: 100px; 
+      margin-top: 120px; 
     }
 
-    /* Tarjetas de información (ubicación y horario) */
+    /* Tarjetas info */
     .info-cards {
       display: flex;
       justify-content: center;
@@ -130,6 +129,7 @@
       background-color: #4285F4;
     }
 
+    /* Productos */
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -156,6 +156,36 @@
       width: 100%;
       border-radius: 10px;
     }
+
+    .producto button {
+      margin-top: 8px;
+      background-color: #15392A;
+      color: #fff;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .producto button:hover {
+      background-color: #1f5b42;
+    }
+
+    /* Carrito flotante */
+    #carrito {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
@@ -165,9 +195,7 @@
     <h1>Licorería 25 Onzas</h1>
   </header>
 
-  <!-- Contenido principal -->
   <div class="contenido">
-    
     <!-- Tarjetas de ubicación y horario -->
     <div class="info-cards">
       <div class="info-card">
@@ -194,11 +222,21 @@
     <div class="productos">
       <div class="producto">
         <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-        <h3>Nombre del Producto</h3>
-        <p>$Precio</p>
+        <h3>Producto A</h3>
+        <p>$20000</p>
+        <button onclick="agregarAlCarrito('Producto A', 20000)">Agregar</button>
+      </div>
+      <div class="producto">
+        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
+        <h3>Producto B</h3>
+        <p>$30000</p>
+        <button onclick="agregarAlCarrito('Producto B', 30000)">Agregar</button>
       </div>
     </div>
   </div>
+
+  <!-- Botón flotante de carrito -->
+  <div id="carrito" onclick="enviarPedido()">🛒 0</div>
 
   <!-- Sonido "push" -->
   <audio id="sonidoPush" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg" preload="auto"></audio>
@@ -206,6 +244,32 @@
   <script>
     function reproducirSonido() {
       document.getElementById('sonidoPush').play();
+    }
+
+    let carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      document.getElementById('carrito').textContent = `🛒 ${carrito.length}`;
+      reproducirSonido();
+    }
+
+    function enviarPedido() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío");
+        return;
+      }
+
+      const nombreCliente = prompt("Ingresa tu nombre:");
+      if (!nombreCliente) return;
+
+      let mensaje = `Hola, soy ${nombreCliente}. Me gustaría cotizar estos productos:\n\n`;
+      carrito.forEach((item, i) => {
+        mensaje += `${i+1}. ${item.nombre} - $${item.precio}\n`;
+      });
+
+      const url = `https://wa.me/573209116861?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
     }
   </script>
 </body>
