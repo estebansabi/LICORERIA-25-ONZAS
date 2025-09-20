@@ -249,19 +249,21 @@
       const telefonoCliente = prompt("Ingresa tu número de contacto:");
       if (!nombreCliente || !telefonoCliente) return;
 
-      let mensaje = `*COTIZACIÓN*\n`;
+      let mensaje = `***COTIZACIÓN***\n\n`;
       mensaje += `Licorería 25 Onzas\n`;
       mensaje += `NIT: 1032473461\n`;
-      mensaje += `Calle 22 N° 20-67 Paipa - Boyacá\n`;
-      mensaje += `Correo: facturacion.25onzas@gmail.com\n`;
-      mensaje += `-----------------------------\n`;
-      mensaje += `*Cliente:* ${nombreCliente}\n`;
-      mensaje += `*Teléfono:* ${telefonoCliente}\n\n`;
-      mensaje += `*Productos solicitados:*\n`;
+      mensaje += `Dirección: Calle 22 N° 20-67 Paipa - Boyacá\n`;
+      mensaje += `Correo: facturacion.25onzas@gmail.com\n\n`;
+      mensaje += `Cliente: ${nombreCliente}\n`;
+      mensaje += `Tel: ${telefonoCliente}\n\n`;
+      mensaje += `Productos solicitados:\n`;
 
       carrito.forEach((item, i) => {
         mensaje += `${i+1}. ${item.nombre} - $${item.precio}\n`;
       });
+
+      mensaje += `\n-----------------------------\n`;
+      mensaje += `Gracias por preferirnos`;
 
       const url = `https://wa.me/573209116861?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
