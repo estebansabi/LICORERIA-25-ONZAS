@@ -249,13 +249,16 @@
       const telefonoCliente = prompt("Ingresa tu número de contacto:");
       if (!nombreCliente || !telefonoCliente) return;
 
-      let mensaje = `🧾 *Cotización*\n`;
-      mensaje += `👤 *Laura Sofia Mateus Mateus*\n`;
-      mensaje += `🆔 NIT: 1032473461\n`;
+      let mensaje = `🧾 *Cotización*\n\n`;
+      mensaje += `🏪 *Licorería 25 Onzas*\n`;
+      mensaje += `👩‍💼 *Laura Sofia Mateus Mateus*\n`;
+      mensaje += `🆔 *NIT:* 1032473461\n`;
       mensaje += `📍 Calle 22 N° 20-67 Paipa - Boyacá\n`;
       mensaje += `📧 facturacion.25onzas@gmail.com\n\n`;
+
       mensaje += `👤 *Cliente:* ${nombreCliente}\n`;
       mensaje += `📱 *Tel:* ${telefonoCliente}\n\n`;
+
       mensaje += `📦 *Productos solicitados:*\n`;
 
       carrito.forEach((item, i) => {
