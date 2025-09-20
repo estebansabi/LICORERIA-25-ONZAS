@@ -200,9 +200,9 @@
     </div>
 
     <div class="info-buttons">
-      <a href="https://wa.me/573209116861" target="_blank" class="btn-whatsapp" onclick="reproducirSonido()">📲 WhatsApp</a>
-      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="btn-instagram" onclick="reproducirSonido()">📷 Instagram</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank" class="btn-maps" onclick="reproducirSonido()">🌍 Ver en Google Maps</a>
+      <a href="https://wa.me/573209116861" target="_blank" class="btn-whatsapp" onclick="reproducirSonido()">WhatsApp</a>
+      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="btn-instagram" onclick="reproducirSonido()">Instagram</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank" class="btn-maps" onclick="reproducirSonido()">Ver en Google Maps</a>
     </div>
 
     <h2>Productos</h2>
@@ -249,17 +249,15 @@
       const telefonoCliente = prompt("Ingresa tu número de contacto:");
       if (!nombreCliente || !telefonoCliente) return;
 
-      let mensaje = `🧾 *Cotización*\n\n`;
-      mensaje += `🏪 *Licorería 25 Onzas*\n`;
-      mensaje += `👩‍💼 *Laura Sofia Mateus Mateus*\n`;
-      mensaje += `🆔 *NIT:* 1032473461\n`;
-      mensaje += `📍 Calle 22 N° 20-67 Paipa - Boyacá\n`;
-      mensaje += `📧 facturacion.25onzas@gmail.com\n\n`;
-
-      mensaje += `👤 *Cliente:* ${nombreCliente}\n`;
-      mensaje += `📱 *Tel:* ${telefonoCliente}\n\n`;
-
-      mensaje += `📦 *Productos solicitados:*\n`;
+      let mensaje = `*COTIZACIÓN*\n`;
+      mensaje += `Licorería 25 Onzas\n`;
+      mensaje += `NIT: 1032473461\n`;
+      mensaje += `Calle 22 N° 20-67 Paipa - Boyacá\n`;
+      mensaje += `Correo: facturacion.25onzas@gmail.com\n`;
+      mensaje += `-----------------------------\n`;
+      mensaje += `*Cliente:* ${nombreCliente}\n`;
+      mensaje += `*Teléfono:* ${telefonoCliente}\n\n`;
+      mensaje += `*Productos solicitados:*\n`;
 
       carrito.forEach((item, i) => {
         mensaje += `${i+1}. ${item.nombre} - $${item.precio}\n`;
