@@ -45,7 +45,7 @@
     }
 
     .contenido {
-      margin-top: 120px; 
+      margin-top: 140px; 
     }
 
     .info-cards {
@@ -121,6 +121,31 @@
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
     .btn-maps { background-color: #4285F4; }
+
+    /* Categorías */
+    .categorias {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .categorias button {
+      background-color: #15392A;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .categorias button:hover {
+      background-color: #1f5b42;
+      transform: scale(1.05);
+    }
 
     .productos {
       display: flex;
@@ -203,6 +228,21 @@
       <a href="https://wa.me/573209116861" target="_blank" class="btn-whatsapp" onclick="reproducirSonido()">WhatsApp</a>
       <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="btn-instagram" onclick="reproducirSonido()">Instagram</a>
       <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank" class="btn-maps" onclick="reproducirSonido()">Ver en Google Maps</a>
+    </div>
+
+    <!-- Categorías -->
+    <h2>Categorías</h2>
+    <div class="categorias">
+      <button>AGUARDIENTE</button>
+      <button>CERVEZAS IMPORTADAS</button>
+      <button>ESPUMOSOS Y CHAMPAGNE</button>
+      <button>GINEBRA</button>
+      <button>HOGAR</button>
+      <button>OTROS LICORES</button>
+      <button>RON</button>
+      <button>TEQUILA Y MEZCAL</button>
+      <button>VINOS</button>
+      <button>WHISKY</button>
     </div>
 
     <h2>Productos</h2>
