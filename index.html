@@ -147,6 +147,19 @@
       transform: scale(1.05);
     }
 
+    .buscador {
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .buscador input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #15392A;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
     .productos {
       display: flex;
       flex-wrap: wrap;
@@ -233,31 +246,36 @@
     <!-- Categorías -->
     <h2>Categorías</h2>
     <div class="categorias">
-      <button>AGUARDIENTE</button>
-      <button>CERVEZAS IMPORTADAS</button>
-      <button>ESPUMOSOS Y CHAMPAGNE</button>
-      <button>GINEBRA</button>
-      <button>HOGAR</button>
-      <button>OTROS LICORES</button>
-      <button>RON</button>
-      <button>TEQUILA Y MEZCAL</button>
-      <button>VINOS</button>
-      <button>WHISKY</button>
+      <button onclick="mostrarCategoria('AGUARDIENTE')">AGUARDIENTE</button>
+      <button onclick="mostrarCategoria('CERVEZAS IMPORTADAS')">CERVEZAS IMPORTADAS</button>
+      <button onclick="mostrarCategoria('ESPUMOSOS Y CHAMPAGNE')">ESPUMOSOS Y CHAMPAGNE</button>
+      <button onclick="mostrarCategoria('GINEBRA')">GINEBRA</button>
+      <button onclick="mostrarCategoria('HOGAR')">HOGAR</button>
+      <button onclick="mostrarCategoria('OTROS LICORES')">OTROS LICORES</button>
+      <button onclick="mostrarCategoria('RON')">RON</button>
+      <button onclick="mostrarCategoria('TEQUILA Y MEZCAL')">TEQUILA Y MEZCAL</button>
+      <button onclick="mostrarCategoria('VINOS')">VINOS</button>
+      <button onclick="mostrarCategoria('WHISKY')">WHISKY</button>
+    </div>
+
+    <!-- Buscador -->
+    <div class="buscador">
+      <input type="text" id="buscador" placeholder="Buscar producto en esta categoría..." onkeyup="filtrarProductos()">
     </div>
 
     <h2>Productos</h2>
-    <div class="productos">
-      <div class="producto">
+    <div id="lista-productos" class="productos">
+      <div class="producto" data-categoria="WHISKY">
         <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-        <h3>Producto A</h3>
+        <h3>Whisky A</h3>
         <p>$20000</p>
-        <button onclick="agregarAlCarrito('Producto A', 20000)">Agregar</button>
+        <button onclick="agregarAlCarrito('Whisky A', 20000)">Agregar</button>
       </div>
-      <div class="producto">
+      <div class="producto" data-categoria="RON">
         <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-        <h3>Producto B</h3>
+        <h3>Ron B</h3>
         <p>$30000</p>
-        <button onclick="agregarAlCarrito('Producto B', 30000)">Agregar</button>
+        <button onclick="agregarAlCarrito('Ron B', 30000)">Agregar</button>
       </div>
     </div>
   </div>
@@ -308,6 +326,30 @@
       const url = `https://wa.me/573209116861?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
+
+    // Filtrar por categoría
+    function mostrarCategoria(categoria) {
+      document.getElementById("buscador").value = "";
+      const productos = document.querySelectorAll(".producto");
+      productos.forEach(prod => {
+        prod.style.display = prod.getAttribute("data-categoria") === categoria ? "block" : "none";
+      });
+    }
+
+    // Buscar dentro de categoría
+    function filtrarProductos() {
+      const texto = document.getElementById("buscador").value.toLowerCase();
+      const productos = document.querySelectorAll(".producto");
+      productos.forEach(prod => {
+        const nombre = prod.querySelector("h3").textContent.toLowerCase();
+        if (nombre.includes(texto)) {
+          prod.style.display = "block";
+        } else {
+          prod.style.display = "none";
+        }
+      });
+    }
   </script>
 </body>
 </html>
+
