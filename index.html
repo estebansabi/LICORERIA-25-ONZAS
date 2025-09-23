@@ -45,82 +45,8 @@
     }
 
     .contenido {
-      margin-top: 140px; 
+      margin-top: 120px; 
     }
-
-    .info-cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px 0;
-    }
-
-    .info-card {
-      background: #f7f9f8;
-      border: 1px solid #15392A;
-      border-radius: 15px;
-      padding: 20px;
-      width: 260px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
-    .info-card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: #15392A;
-    }
-
-    .info-card p {
-      margin: 0;
-      font-size: 15px;
-      color: #333;
-    }
-
-    .info-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .info-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin: 25px 0;
-    }
-
-    .info-buttons a {
-      color: #fff;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-size: 16px;
-    }
-
-    .info-buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
-
-    .btn-whatsapp { background-color: #25D366; }
-    .btn-instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-    .btn-maps { background-color: #4285F4; }
 
     /* Categorías */
     .categorias {
@@ -147,44 +73,69 @@
       transform: scale(1.05);
     }
 
+    /* Buscador */
     .buscador {
-      margin: 20px auto;
-      max-width: 400px;
+      margin: 15px 0;
     }
 
     .buscador input {
-      width: 100%;
       padding: 10px;
+      width: 80%;
+      max-width: 400px;
       border: 2px solid #15392A;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
     }
 
+    /* Productos */
     .productos {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       padding: 20px;
     }
 
+    .productos.activo {
+      display: flex;
+    }
+
     .producto {
       border: 1px solid #15392A;
       padding: 15px;
-      width: 200px;
-      border-radius: 10px;
+      width: 220px;
+      border-radius: 15px;
       background: #ffffff;
       transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
     .producto:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
     .producto img {
       width: 100%;
+      height: 160px;
+      object-fit: cover;
       border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .producto h3 {
+      font-size: 16px;
+      margin: 8px 0 5px;
+      color: #15392A;
+    }
+
+    .producto p {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1f5b42;
+      margin: 5px 0;
     }
 
     .producto button {
@@ -192,7 +143,7 @@
       background-color: #15392A;
       color: #fff;
       border: none;
-      padding: 8px 10px;
+      padding: 8px 12px;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -224,77 +175,142 @@
   </header>
 
   <div class="contenido">
-    <div class="info-cards">
-      <div class="info-card">
-        <div class="info-icon">📍</div>
-        <h3>Ubicación</h3>
-        <p>Calle 22 #20-67<br>Paipa</p>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">⏰</div>
-        <h3>Horario</h3>
-        <p>Lun-Jue: 10:00am - 8:30pm<br>Vie-Sáb: 10:00am - 11:59pm</p>
-      </div>
-    </div>
-
-    <div class="info-buttons">
-      <a href="https://wa.me/573209116861" target="_blank" class="btn-whatsapp" onclick="reproducirSonido()">WhatsApp</a>
-      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="btn-instagram" onclick="reproducirSonido()">Instagram</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Calle+22+%2320-67+Paipa" target="_blank" class="btn-maps" onclick="reproducirSonido()">Ver en Google Maps</a>
-    </div>
-
-    <!-- Categorías -->
     <h2>Categorías</h2>
     <div class="categorias">
-      <button onclick="mostrarCategoria('AGUARDIENTE')">AGUARDIENTE</button>
-      <button onclick="mostrarCategoria('CERVEZAS IMPORTADAS')">CERVEZAS IMPORTADAS</button>
-      <button onclick="mostrarCategoria('ESPUMOSOS Y CHAMPAGNE')">ESPUMOSOS Y CHAMPAGNE</button>
-      <button onclick="mostrarCategoria('GINEBRA')">GINEBRA</button>
-      <button onclick="mostrarCategoria('HOGAR')">HOGAR</button>
-      <button onclick="mostrarCategoria('OTROS LICORES')">OTROS LICORES</button>
-      <button onclick="mostrarCategoria('RON')">RON</button>
-      <button onclick="mostrarCategoria('TEQUILA Y MEZCAL')">TEQUILA Y MEZCAL</button>
-      <button onclick="mostrarCategoria('VINOS')">VINOS</button>
-      <button onclick="mostrarCategoria('WHISKY')">WHISKY</button>
+      <button onclick="mostrarCategoria('aguardiente')">AGUARDIENTE</button>
+      <button onclick="mostrarCategoria('cervezas')">CERVEZAS IMPORTADAS</button>
+      <button onclick="mostrarCategoria('espumosos')">ESPUMOSOS Y CHAMPAGNE</button>
+      <button onclick="mostrarCategoria('ginebra')">GINEBRA</button>
+      <button onclick="mostrarCategoria('hogar')">HOGAR</button>
+      <button onclick="mostrarCategoria('otros')">OTROS LICORES</button>
+      <button onclick="mostrarCategoria('ron')">RON</button>
+      <button onclick="mostrarCategoria('tequila')">TEQUILA Y MEZCAL</button>
+      <button onclick="mostrarCategoria('vinos')">VINOS</button>
+      <button onclick="mostrarCategoria('whisky')">WHISKY</button>
     </div>
 
     <!-- Buscador -->
     <div class="buscador">
-      <input type="text" id="buscador" placeholder="Buscar producto en esta categoría..." onkeyup="filtrarProductos()">
+      <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="filtrarProductos()">
     </div>
 
-    <h2>Productos</h2>
-    <div id="lista-productos" class="productos">
-      <div class="producto" data-categoria="WHISKY">
-        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-        <h3>Whisky A</h3>
-        <p>$20000</p>
-        <button onclick="agregarAlCarrito('Whisky A', 20000)">Agregar</button>
+    <!-- Productos por categoría -->
+    <div id="aguardiente" class="productos activo">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Aguardiente">
+        <h3>Aguardiente Antioqueño</h3>
+        <p>$50.000</p>
+        <button onclick="agregarAlCarrito('Aguardiente Antioqueño', 50000)">Agregar</button>
       </div>
-      <div class="producto" data-categoria="RON">
-        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/producto1.jpg.jpeg" alt="Producto ejemplo">
-        <h3>Ron B</h3>
-        <p>$30000</p>
-        <button onclick="agregarAlCarrito('Ron B', 30000)">Agregar</button>
+    </div>
+
+    <div id="cervezas" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Cerveza">
+        <h3>Cerveza Corona</h3>
+        <p>$10.000</p>
+        <button onclick="agregarAlCarrito('Cerveza Corona', 10000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="espumosos" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Espumoso">
+        <h3>Chandon Brut</h3>
+        <p>$120.000</p>
+        <button onclick="agregarAlCarrito('Chandon Brut', 120000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="ginebra" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Ginebra">
+        <h3>Tanqueray</h3>
+        <p>$130.000</p>
+        <button onclick="agregarAlCarrito('Tanqueray', 130000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="hogar" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Hogar">
+        <h3>Set de Copas</h3>
+        <p>$80.000</p>
+        <button onclick="agregarAlCarrito('Set de Copas', 80000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="otros" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Otros">
+        <h3>Licor de Café</h3>
+        <p>$60.000</p>
+        <button onclick="agregarAlCarrito('Licor de Café', 60000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="ron" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Ron">
+        <h3>Ron Medellín 8 Años</h3>
+        <p>$90.000</p>
+        <button onclick="agregarAlCarrito('Ron Medellín 8 Años', 90000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="tequila" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Tequila">
+        <h3>Don Julio</h3>
+        <p>$180.000</p>
+        <button onclick="agregarAlCarrito('Don Julio', 180000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="vinos" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Vino">
+        <h3>Vino Tinto Malbec</h3>
+        <p>$70.000</p>
+        <button onclick="agregarAlCarrito('Vino Tinto Malbec', 70000)">Agregar</button>
+      </div>
+    </div>
+
+    <div id="whisky" class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x160" alt="Whisky">
+        <h3>Johnnie Walker Black</h3>
+        <p>$150.000</p>
+        <button onclick="agregarAlCarrito('Johnnie Walker Black', 150000)">Agregar</button>
       </div>
     </div>
   </div>
 
   <div id="carrito" onclick="enviarPedido()">🛒 0</div>
 
-  <audio id="sonidoPush" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg" preload="auto"></audio>
-
   <script>
-    function reproducirSonido() {
-      document.getElementById('sonidoPush').play();
+    let carrito = [];
+
+    function mostrarCategoria(id) {
+      document.querySelectorAll('.productos').forEach(c => c.classList.remove('activo'));
+      document.getElementById(id).classList.add('activo');
+      document.getElementById('buscador').value = "";
+      filtrarProductos();
     }
 
-    let carrito = [];
+    function filtrarProductos() {
+      const texto = document.getElementById('buscador').value.toLowerCase();
+      const activos = document.querySelector('.productos.activo');
+      const productos = activos.querySelectorAll('.producto');
+      productos.forEach(p => {
+        const nombre = p.querySelector('h3').textContent.toLowerCase();
+        p.style.display = nombre.includes(texto) ? 'block' : 'none';
+      });
+    }
 
     function agregarAlCarrito(nombre, precio) {
       carrito.push({ nombre, precio });
       document.getElementById('carrito').textContent = `🛒 ${carrito.length}`;
-      reproducirSonido();
     }
 
     function enviarPedido() {
@@ -303,53 +319,15 @@
         return;
       }
 
-      const nombreCliente = prompt("Ingresa tu nombre:");
-      const telefonoCliente = prompt("Ingresa tu número de contacto:");
-      if (!nombreCliente || !telefonoCliente) return;
-
-      let mensaje = `***COTIZACIÓN***\n\n`;
-      mensaje += `Licorería 25 Onzas\n`;
-      mensaje += `NIT: 1032473461\n`;
-      mensaje += `Dirección: Calle 22 N° 20-67 Paipa - Boyacá\n`;
-      mensaje += `Correo: facturacion.25onzas@gmail.com\n\n`;
-      mensaje += `Cliente: ${nombreCliente}\n`;
-      mensaje += `Tel: ${telefonoCliente}\n\n`;
-      mensaje += `Productos solicitados:\n`;
-
+      let mensaje = `***COTIZACIÓN***\n\nLicorería 25 Onzas\n\nProductos:\n`;
       carrito.forEach((item, i) => {
         mensaje += `${i+1}. ${item.nombre} - $${item.precio}\n`;
       });
-
-      mensaje += `\n-----------------------------\n`;
-      mensaje += `Gracias por preferirnos`;
+      mensaje += "\nGracias por preferirnos 🙌";
 
       const url = `https://wa.me/573209116861?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
-
-    // Filtrar por categoría
-    function mostrarCategoria(categoria) {
-      document.getElementById("buscador").value = "";
-      const productos = document.querySelectorAll(".producto");
-      productos.forEach(prod => {
-        prod.style.display = prod.getAttribute("data-categoria") === categoria ? "block" : "none";
-      });
-    }
-
-    // Buscar dentro de categoría
-    function filtrarProductos() {
-      const texto = document.getElementById("buscador").value.toLowerCase();
-      const productos = document.querySelectorAll(".producto");
-      productos.forEach(prod => {
-        const nombre = prod.querySelector("h3").textContent.toLowerCase();
-        if (nombre.includes(texto)) {
-          prod.style.display = "block";
-        } else {
-          prod.style.display = "none";
-        }
-      });
-    }
   </script>
 </body>
 </html>
-
