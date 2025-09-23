@@ -194,170 +194,34 @@
       <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="filtrarProductos()">
     </div>
 
-    <!-- ================== PRODUCTOS ================== -->
-
-    <!-- Aguardiente -->
+    <!-- Categorías (ejemplo Aguardiente) -->
     <div id="aguardiente" class="productos activo">
       <div class="producto">
-        <img src="https://i.ibb.co/GcyhS7f/amarillo.png" alt="Aguardiente Amarillo">
+        <img src="https://via.placeholder.com/200x160" alt="Aguardiente">
         <h3>Aguardiente Amarillo</h3>
         <p>$50.000</p>
         <button onclick="agregarAlCarrito('Aguardiente Amarillo', 50000)">Agregar</button>
       </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/02BKPgr/antioqueno.png" alt="Aguardiente Antioqueño">
-        <h3>Aguardiente Antioqueño</h3>
-        <p>$48.000</p>
-        <button onclick="agregarAlCarrito('Aguardiente Antioqueño', 48000)">Agregar</button>
-      </div>
     </div>
 
-    <!-- Cervezas -->
-    <div id="cervezas" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/7Xnn8Zy/corona.png" alt="Cerveza Corona">
-        <h3>Cerveza Corona</h3>
-        <p>$10.000</p>
-        <button onclick="agregarAlCarrito('Cerveza Corona', 10000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/ZXv0b7F/heineken.png" alt="Cerveza Heineken">
-        <h3>Cerveza Heineken</h3>
-        <p>$11.000</p>
-        <button onclick="agregarAlCarrito('Cerveza Heineken', 11000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Espumosos -->
-    <div id="espumosos" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/k9DyGBF/chandon.png" alt="Chandon Brut">
-        <h3>Chandon Brut</h3>
-        <p>$120.000</p>
-        <button onclick="agregarAlCarrito('Chandon Brut', 120000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/gP2JhyJ/moet.png" alt="Moët & Chandon">
-        <h3>Moët & Chandon</h3>
-        <p>$350.000</p>
-        <button onclick="agregarAlCarrito('Moët & Chandon', 350000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Ginebra -->
-    <div id="ginebra" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/6wN1d4p/tanqueray.png" alt="Tanqueray">
-        <h3>Tanqueray</h3>
-        <p>$130.000</p>
-        <button onclick="agregarAlCarrito('Tanqueray', 130000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/R0R1kxm/bombay.png" alt="Bombay Sapphire">
-        <h3>Bombay Sapphire</h3>
-        <p>$125.000</p>
-        <button onclick="agregarAlCarrito('Bombay Sapphire', 125000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Ron -->
-    <div id="ron" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/p2wcG0r/medellin.png" alt="Ron Medellín 8 Años">
-        <h3>Ron Medellín 8 Años</h3>
-        <p>$90.000</p>
-        <button onclick="agregarAlCarrito('Ron Medellín 8 Años', 90000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/x7wrfpk/havana.png" alt="Havana Club Añejo">
-        <h3>Havana Club Añejo</h3>
-        <p>$95.000</p>
-        <button onclick="agregarAlCarrito('Havana Club Añejo', 95000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Tequila -->
-    <div id="tequila" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/8NBr6gM/donjulio.png" alt="Don Julio">
-        <h3>Don Julio</h3>
-        <p>$180.000</p>
-        <button onclick="agregarAlCarrito('Don Julio', 180000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/5B5VJwJ/josecuervo.png" alt="Jose Cuervo">
-        <h3>Jose Cuervo</h3>
-        <p>$110.000</p>
-        <button onclick="agregarAlCarrito('Jose Cuervo', 110000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Vinos -->
-    <div id="vinos" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/1G5w0hM/malbec.png" alt="Vino Tinto Malbec">
-        <h3>Vino Tinto Malbec</h3>
-        <p>$70.000</p>
-        <button onclick="agregarAlCarrito('Vino Tinto Malbec', 70000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/7Xy3PTh/cabernet.png" alt="Vino Cabernet Sauvignon">
-        <h3>Vino Cabernet Sauvignon</h3>
-        <p>$80.000</p>
-        <button onclick="agregarAlCarrito('Vino Cabernet Sauvignon', 80000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Whisky -->
+    <!-- WHISKY -->
     <div id="whisky" class="productos">
       <div class="producto">
-        <img src="https://i.ibb.co/09p6Gkw/black.png" alt="Johnnie Walker Black">
-        <h3>Johnnie Walker Black</h3>
-        <p>$150.000</p>
-        <button onclick="agregarAlCarrito('Johnnie Walker Black', 150000)">Agregar</button>
+        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/glenfiddich18.jpg" alt="Glenfiddich 18">
+        <h3>GLENFIDDICH 18 AÑOS SINGLE MALT – 750ML</h3>
+        <p>$524.000</p>
+        <button onclick="agregarAlCarrito('Glenfiddich 18 Años – 750ML', 524000)">Agregar</button>
       </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/Gpy6Mp7/chivas.png" alt="Chivas Regal 12">
-        <h3>Chivas Regal 12</h3>
-        <p>$160.000</p>
-        <button onclick="agregarAlCarrito('Chivas Regal 12', 160000)">Agregar</button>
-      </div>
-    </div>
 
-    <!-- Otros -->
-    <div id="otros" class="productos">
       <div class="producto">
-        <img src="https://i.ibb.co/wy3VnPn/cafe.png" alt="Licor de Café">
-        <h3>Licor de Café</h3>
-        <p>$60.000</p>
-        <button onclick="agregarAlCarrito('Licor de Café', 60000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/x7CCdc4/baileys.png" alt="Baileys">
-        <h3>Baileys</h3>
-        <p>$85.000</p>
-        <button onclick="agregarAlCarrito('Baileys', 85000)">Agregar</button>
-      </div>
-    </div>
-
-    <!-- Hogar -->
-    <div id="hogar" class="productos">
-      <div class="producto">
-        <img src="https://i.ibb.co/4TPTw25/copas.png" alt="Set de Copas">
-        <h3>Set de Copas</h3>
-        <p>$80.000</p>
-        <button onclick="agregarAlCarrito('Set de Copas', 80000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="https://i.ibb.co/Z8hJgbG/hielera.png" alt="Hielera de Acero">
-        <h3>Hielera de Acero</h3>
-        <p>$95.000</p>
-        <button onclick="agregarAlCarrito('Hielera de Acero', 95000)">Agregar</button>
+        <img src="https://raw.githubusercontent.com/estebansabi/mi-catalogo/main/glenfiddich15.jpg" alt="Glenfiddich 15">
+        <h3>GLENFIDDICH 15 AÑOS SINGLE MALT – 750ML</h3>
+        <p>$318.000</p>
+        <button onclick="agregarAlCarrito('Glenfiddich 15 Años – 750ML', 318000)">Agregar</button>
       </div>
     </div>
   </div>
 
-  <!-- Carrito flotante -->
   <div id="carrito" onclick="enviarPedido()">🛒 0</div>
 
   <script>
