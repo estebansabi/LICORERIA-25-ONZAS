@@ -10,13 +10,16 @@
       margin: 0;
       padding: 0;
       background: #15392A; /* verde oliva */
-      color: white; /* mejora contraste */
+      color: white;
     }
     header {
       background: #222;
-      color: white;
       padding: 15px;
       text-align: center;
+    }
+    header h1, header p {
+      color: #CEA35D; /* dorado */
+      margin: 5px 0;
     }
     .buscador {
       margin: 10px auto;
@@ -39,10 +42,14 @@
       margin: 5px;
       padding: 10px 15px;
       border: none;
-      background: #444;
+      background: #CEA35D; /* dorado */
       color: white;
+      font-weight: bold;
       cursor: pointer;
       border-radius: 5px;
+    }
+    .categorias button:hover {
+      opacity: 0.9;
     }
     .productos {
       display: grid;
@@ -51,12 +58,12 @@
       padding: 20px;
     }
     .producto {
-      background: #15392A; /* fondo verde oliva */
+      background: #15392A;
       padding: 15px;
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      border: 1px solid #fff; /* separa visualmente las tarjetas */
+      border: 2px solid #CEA35D; /* borde dorado */
     }
     .producto img {
       max-width: 100%;
@@ -72,7 +79,7 @@
       color: #ddd;
     }
     .producto button {
-      background: #1e5631; /* verde más fuerte para diferenciar */
+      background: #1e5631;
       color: white;
       border: none;
       padding: 10px;
@@ -84,13 +91,15 @@
       text-align: center;
       padding: 20px;
       background: #222;
-      color: white;
       margin-top: 30px;
+    }
+    footer p {
+      color: #CEA35D; /* dorado */
     }
     .social-buttons a {
       margin: 0 10px;
       text-decoration: none;
-      color: white;
+      color: #CEA35D; /* dorado */
       font-weight: bold;
     }
   </style>
@@ -98,7 +107,7 @@
 <body>
   <header>
     <h1>Licorería 25 Onzas</h1>
-    <p>  Dirección: Calle 22 #20-67</p>
+    <p>Dirección: Calle 22 #20-67</p>
   </header>
 
   <!-- Buscador -->
