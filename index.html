@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Licorería 25 Onzas</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #15392A; /* Fondo verde oliva */
-    }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#15392A; color:#fff; }
 
     /* HEADER */
     header {
-      background: #15392A;
-      padding: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background:#15392A;
+      padding:25px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-    header img {
-      max-height: 120px; /* aumentado */
-      margin: 0 10px;
-      height: auto;
-    }
+    header img { max-height:120px; margin:0 10px; height:auto; }
 
     /* FLOATER CARRITO */
     .carrito {
@@ -39,9 +30,9 @@
       font-size: 22px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
     .contador {
       position: absolute;
@@ -53,152 +44,71 @@
       padding: 3px 6px;
       border-radius: 50%;
       font-weight: bold;
-      line-height: 1;
+      line-height:1;
     }
 
-    /* BUSCADOR/CATEGORÍAS/PRODUCTOS */
-    .buscador {
-      margin: 10px auto;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
-    }
-    .buscador input {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
-    }
-    .categorias {
-      text-align: center;
-      margin: 15px 0;
-      color: #CEA35D;
-    }
+    /* BUSCADOR / CATEGORIAS / PRODUCTOS */
+    .buscador { margin:10px auto; max-width:600px; display:flex; justify-content:center; }
+    .buscador input { width:80%; padding:10px; font-size:16px; border-radius:6px; border: none; }
+    .categorias { text-align:center; margin:15px 0; color:#CEA35D; }
     .categorias button {
-      margin: 5px;
-      padding: 10px 15px;
-      border: none;
-      background: #CEA35D;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
+      margin:5px; padding:10px 15px; border:none; background:#CEA35D; color:white; cursor:pointer; border-radius:5px;
     }
+
     .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px; padding:20px;
     }
     .producto {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: 2px solid #CEA35D;
+      background:white; color:#111;
+      padding:15px; border-radius:8px; text-align:center;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      border:2px solid #CEA35D;
     }
-    .producto img { max-width: 100%; height: auto; border-radius: 5px; }
-    .producto h3 { margin: 10px 0 5px; }
-    .producto p { margin: 5px 0; color: #555; }
-    .producto button {
-      background: green;
-      color: white;
-      border: none;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+    .producto img { max-width:100%; height:auto; border-radius:5px; }
+    .producto h3 { margin:10px 0 5px; }
+    .producto p { margin:5px 0; color:#555; }
+    .producto button { background: #1e5631; color: white; border:none; padding:10px; margin-top:10px; border-radius:5px; cursor:pointer; }
 
     /* FOOTER */
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #15392A;
-      color: white;
-      margin-top: 30px;
+      text-align:center; padding:20px; background:#15392A; color:white; margin-top:30px;
     }
-    .social-buttons { margin-bottom: 15px; }
+    .social-buttons { margin-bottom:15px; }
     .social-buttons a {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 20px;
-      background: #CEA35D;
-      color: white;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.2s;
+      display:inline-block; margin:5px; padding:10px 20px; background:#CEA35D; color:white; border-radius:5px;
+      font-weight:bold; text-decoration:none;
     }
-    .social-buttons a:hover { background: #b38745; }
+    .social-buttons a:hover { background:#b38745; }
 
     /* MODAL CARRITO */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:2000; }
     .modal-contenido {
-      background: white;
-      padding: 18px;
-      border-radius: 10px;
-      width: 92%;
-      max-width: 520px;
-      text-align: left;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      background:white; padding:18px; border-radius:10px; width:92%; max-width:520px; text-align:left; color:#111;
+      box-shadow:0 8px 30px rgba(0,0,0,0.3);
     }
-    .modal-contenido h2 { margin-top: 0; color: #15392A; }
-    .item-carrito {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 0;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #eee;
-    }
-    .item-info { max-width: 65%; }
+    .modal-contenido h2 { margin-top:0; color:#15392A; }
+    .item-carrito { display:flex; justify-content:space-between; align-items:center; margin:10px 0; padding-bottom:6px; border-bottom:1px solid #eee; }
+    .item-info { max-width:65%; }
     .item-ops { display:flex; align-items:center; gap:6px; }
     .item-ops button {
-      background: #CEA35D;
-      border: none;
-      padding: 6px 10px;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
+      background:#CEA35D; border:none; padding:6px 10px; color:white; border-radius:6px; cursor:pointer; font-weight:bold;
     }
-    .btn-cerrar {
-      background: #888;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-right: 8px;
-    }
-    .btn-enviar {
-      background: #1e5631;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .total-line { text-align: right; font-weight: bold; margin-top: 12px; }
+    .btn-cerrar { background:#888; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; margin-right:8px; }
+    .btn-enviar { background:#1e5631; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    .total-line { text-align:right; font-weight:bold; margin-top:12px; }
 
     @media (max-width:520px){
-      header img { max-height: 90px; }
-      .modal-contenido { padding: 14px; }
+      header img { max-height:90px; }
+      .modal-contenido { padding:14px; }
+      .buscador input { width: 95%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER CON LOGO -->
+  <!-- HEADER: logo (más grande) -->
   <header>
     <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/7b23d4612bed3e187ae5ad941b5a5ac390a0bfa0/img/LOGO%20HORIZONTAL%20DORADO.JPG.png"
          alt="Licorería 25 Onzas">
@@ -206,7 +116,7 @@
 
   <!-- BUSCADOR -->
   <div class="buscador">
-    <input type="text" id="buscar" placeholder="Buscar producto...">
+    <input id="buscar" type="text" placeholder="Buscar producto...">
   </div>
 
   <!-- CATEGORÍAS -->
@@ -214,41 +124,38 @@
     <button onclick="filtrarCategoria('todos')">Todos</button>
     <button onclick="filtrarCategoria('whisky')">Whisky</button>
     <button onclick="filtrarCategoria('ron')">Ron</button>
-    <button onclick="filtrarCategoria('gin')">Gin</button>
+    <button onclick="filtrarCategoria('vodka')">Vodka</button>
   </div>
 
-  <!-- PRODUCTOS -->
+  <!-- PRODUCTOS (restaurados Glenfiddich) -->
   <div class="productos" id="productos">
     <div class="producto" data-categoria="whisky">
-      <img src="https://via.placeholder.com/200x150" alt="Whisky A">
-      <h3>Whisky A</h3>
-      <p>$20000</p>
-      <button onclick="agregarAlCarrito('Whisky A', 20000)">Agregar</button>
+      <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/GLENDFIDDICH%2018.JPG.jpeg?raw=true" alt="Glenfiddich 18 años">
+      <h3>Glenfiddich 18 años Single Malt</h3>
+      <p>750ml</p>
+      <p><strong>$524.000</strong></p>
+      <button onclick="agregarAlCarrito('Glenfiddich 18 años', 524000)">Agregar</button>
     </div>
-    <div class="producto" data-categoria="ron">
-      <img src="https://via.placeholder.com/200x150" alt="Ron B">
-      <h3>Ron B</h3>
-      <p>$30000</p>
-      <button onclick="agregarAlCarrito('Ron B', 30000)">Agregar</button>
-    </div>
-    <div class="producto" data-categoria="gin">
-      <img src="https://via.placeholder.com/200x150" alt="Gin C">
-      <h3>Gin C</h3>
-      <p>$25000</p>
-      <button onclick="agregarAlCarrito('Gin C', 25000)">Agregar</button>
+
+    <div class="producto" data-categoria="whisky">
+      <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/glenfidiich%2015.jpg?raw=true" alt="Glenfiddich 15 años">
+      <h3>Glenfiddich 15 años Single Malt</h3>
+      <p>750ml</p>
+      <p><strong>$318.000</strong></p>
+      <button onclick="agregarAlCarrito('Glenfiddich 15 años', 318000)">Agregar</button>
     </div>
   </div>
 
-  <!-- CARRITO FLOAT -->
+  <!-- CARRITO FLOTANTE -->
   <div class="carrito" onclick="abrirCarrito()">
     🛒
     <div class="contador" id="contador">0</div>
   </div>
 
   <!-- MODAL CARRITO -->
-  <div class="modal" id="modalCarrito">
-    <div class="modal-contenido">
-      <h2>Tu Carrito</h2>
+  <div class="modal" id="modalCarrito" aria-hidden="true">
+    <div class="modal-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-carrito">
+      <h2 id="titulo-carrito">Tu Carrito</h2>
       <div id="itemsCarrito"></div>
       <div class="total-line">Total: $<span id="total">0</span></div>
       <br>
@@ -261,97 +168,152 @@
   <footer>
     <div class="social-buttons">
       <a href="https://wa.me/57322749484" target="_blank">WhatsApp</a>
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-      <a href="https://goo.gl/maps/" target="_blank">Ubicación</a>
+      <a href="https://www.instagram.com/25.onzas" target="_blank">Instagram</a>
+      <a href="https://maps.app.goo.gl/paxNAPsqmR76ABqJ8" target="_blank">Ubicación</a>
     </div>
     <p>&copy; 2025 Licorería 25 Onzas</p>
   </footer>
 
   <script>
+    // carrito como array: { nombre, precio, cantidad }
     let carrito = [];
-    let total = 0;
 
     function agregarAlCarrito(nombre, precio) {
-      const item = carrito.find(p => p.nombre === nombre);
-      if (item) {
-        item.cantidad++;
-      } else {
-        carrito.push({ nombre, precio, cantidad: 1 });
-      }
-      actualizarCarrito();
+      const item = carrito.find(x => x.nombre === nombre);
+      if (item) item.cantidad++;
+      else carrito.push({ nombre, precio, cantidad: 1 });
+      actualizarContador();
+      // si modal abierto, re-renderizamos
+      if (document.getElementById('modalCarrito').style.display === 'flex') mostrarCarrito();
     }
 
-    function actualizarCarrito() {
-      const itemsDiv = document.getElementById('itemsCarrito');
-      itemsDiv.innerHTML = '';
-      total = 0;
-      let contador = 0;
-
-      carrito.forEach((item, index) => {
-        total += item.precio * item.cantidad;
-        contador += item.cantidad;
-
-        const div = document.createElement('div');
-        div.className = 'item-carrito';
-        div.innerHTML = `
-          <div class="item-info">
-            ${item.nombre} - $${item.precio} x ${item.cantidad}
-          </div>
-          <div class="item-ops">
-            <button onclick="cambiarCantidad(${index}, -1)">-</button>
-            <button onclick="cambiarCantidad(${index}, 1)">+</button>
-          </div>
-        `;
-        itemsDiv.appendChild(div);
-      });
-
-      document.getElementById('total').textContent = total;
+    function actualizarContador() {
+      const contador = carrito.reduce((acc, it) => acc + it.cantidad, 0);
       document.getElementById('contador').textContent = contador;
     }
 
-    function cambiarCantidad(index, cambio) {
-      carrito[index].cantidad += cambio;
-      if (carrito[index].cantidad <= 0) {
-        carrito.splice(index, 1);
-      }
-      actualizarCarrito();
-    }
-
     function abrirCarrito() {
-      document.getElementById('modalCarrito').style.display = 'flex';
+      mostrarCarrito();
+      const modal = document.getElementById('modalCarrito');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
     }
 
     function cerrarCarrito() {
-      document.getElementById('modalCarrito').style.display = 'none';
+      const modal = document.getElementById('modalCarrito');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    function mostrarCarrito() {
+      const container = document.getElementById('itemsCarrito');
+      container.innerHTML = '';
+
+      if (carrito.length === 0) {
+        container.innerHTML = '<p>El carrito está vacío.</p>';
+        document.getElementById('total').textContent = '0';
+        return;
+      }
+
+      let total = 0;
+      carrito.forEach((item, index) => {
+        total += item.precio * item.cantidad;
+
+        const div = document.createElement('div');
+        div.className = 'item-carrito';
+
+        const info = document.createElement('div');
+        info.className = 'item-info';
+        info.innerHTML = `<div><strong>${index + 1}. ${item.nombre}</strong></div>
+                          <div>$${item.precio.toLocaleString()}  × ${item.cantidad}</div>`;
+
+        const ops = document.createElement('div');
+        ops.className = 'item-ops';
+
+        const btnMinus = document.createElement('button');
+        btnMinus.type = 'button';
+        btnMinus.title = 'Quitar uno';
+        btnMinus.textContent = '−';
+        btnMinus.addEventListener('click', () => {
+          cambiarCantidad(index, -1);
+        });
+
+        const btnPlus = document.createElement('button');
+        btnPlus.type = 'button';
+        btnPlus.title = 'Agregar uno';
+        btnPlus.textContent = '+';
+        btnPlus.addEventListener('click', () => {
+          cambiarCantidad(index, +1);
+        });
+
+        ops.appendChild(btnMinus);
+        ops.appendChild(btnPlus);
+
+        div.appendChild(info);
+        div.appendChild(ops);
+        container.appendChild(div);
+      });
+
+      document.getElementById('total').textContent = total.toLocaleString();
+    }
+
+    function cambiarCantidad(index, delta) {
+      if (!carrito[index]) return;
+      carrito[index].cantidad += delta;
+      if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
+      actualizarContador();
+      mostrarCarrito();
     }
 
     function enviarWhatsApp() {
-      let mensaje = `*COTIZACIÓN*\n\nLicorería 25 Onzas\nNIT: 1032473461\nDirección: Calle 22 N° 20-67 Paipa - Boyacá\nCorreo: facturacion.25onzas@gmail.com\n\nCliente: Juan\n\nProductos solicitados:\n`;
-      carrito.forEach(item => {
-        mensaje += `${item.cantidad} x ${item.nombre} - $${item.precio * item.cantidad}\n`;
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
+
+      let cliente = prompt('Por favor ingresa tu nombre:');
+      if (!cliente) cliente = 'Cliente';
+
+      let texto = '*COTIZACIÓN*' + '\n\n';
+      texto += 'Licorería 25 Onzas\n';
+      texto += 'NIT: 1032473461\n';
+      texto += 'Dirección: Calle 22 N° 20-67 Paipa - Boyacá\n';
+      texto += 'Correo: facturacion.25onzas@gmail.com\n\n';
+      texto += 'Cliente: ' + cliente + '\n\n';
+      texto += 'Productos solicitados:\n';
+
+      carrito.forEach((it, idx) => {
+        texto += (idx + 1) + '. ' + it.nombre + ' - $' + (it.precio.toLocaleString()) + ' x' + it.cantidad + '\n';
       });
-      mensaje += `\n-----------------------------\nGracias por preferirnos`;
-      window.open(`https://wa.me/57322749484?text=${encodeURIComponent(mensaje)}`, '_blank');
+
+      texto += '\n-----------------------------\n';
+      texto += 'Gracias por preferirnos';
+
+      const waNumber = '57322749484'; // uso el número que estaba en tu último HTML
+      const url = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(texto);
+      window.open(url, '_blank');
     }
 
+    // Filtrar por categoría (botones)
     function filtrarCategoria(categoria) {
-      const productos = document.querySelectorAll('.producto');
-      productos.forEach(prod => {
-        if (categoria === 'todos' || prod.dataset.categoria === categoria) {
-          prod.style.display = 'block';
-        } else {
-          prod.style.display = 'none';
-        }
+      document.querySelectorAll('.producto').forEach(prod => {
+        const cat = prod.getAttribute('data-categoria') || '';
+        prod.style.display = (categoria === 'todos' || cat === categoria) ? 'block' : 'none';
       });
     }
 
+    // Buscador (input id=buscar)
     document.getElementById('buscar').addEventListener('input', function() {
-      const texto = this.value.toLowerCase();
+      const q = this.value.trim().toLowerCase();
       document.querySelectorAll('.producto').forEach(prod => {
         const nombre = prod.querySelector('h3').textContent.toLowerCase();
-        prod.style.display = nombre.includes(texto) ? 'block' : 'none';
+        prod.style.display = nombre.includes(q) ? 'block' : 'none';
       });
     });
+
+    // Puedes descomentar para pruebas automáticas:
+    // agregarAlCarrito('Glenfiddich 18 años', 524000);
+    // agregarAlCarrito('Glenfiddich 15 años', 318000);
   </script>
 </body>
 </html>
