@@ -135,10 +135,10 @@
 </head>
 <body>
   <header>
-    <!-- Imagen con el título -->
-    <img src="img/titulo-licoreria.png" alt="Licorería 25 Onzas">
+    <!-- Imagen con el título (cámbiala si quieres otra) -->
+    <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/LOGO%20HORIZONTAL.JPG.png?raw=true" alt="Licorería 25 Onzas">
     <!-- Logo -->
-    <img src="img/logo-licoreria.png" alt="Logo 25 Onzas">
+    <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/logo-licoreria.png?raw=true" alt="Logo 25 Onzas">
   </header>
 
   <!-- Buscador -->
@@ -239,11 +239,11 @@
       Object.keys(carrito).forEach((nombre, index) => {
         let item = carrito[nombre];
         mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "\n";
-        mensaje += "   ➕ Añadir otro | ➖ Quitar uno\n";
+        mensaje += "   [➕] Añadir otro | [➖] Quitar uno\n";
       });
 
-      mensaje += "\n¿Quieres enviar esta cotización a WhatsApp?";
-      if (confirm(mensaje)) {
+      let opciones = confirm(mensaje + "\n\n¿Quieres enviar esta cotización a WhatsApp?");
+      if (opciones) {
         enviarCotizacion();
       }
     }
@@ -252,7 +252,7 @@
       let cliente = prompt("Por favor ingresa tu nombre:");
       if (!cliente) cliente = "Cliente";
 
-      let mensaje = "*COTIZACIÓN**%0A%0A" +
+      let mensaje = "*COTIZACIÓN*%0A%0A" +
         "Licorería 25 Onzas%0A" +
         "NIT: 1032473461%0A" +
         "Dirección: Calle 22 N° 20-67 Paipa - Boyacá%0A" +
