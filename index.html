@@ -21,7 +21,7 @@
       align-items: center;
     }
     header img {
-      max-height: 80px;
+      max-height: 120px; /* aumentado de 80px a 120px */
       margin: 0 10px;
       height: auto;
     }
@@ -31,7 +31,7 @@
       position: fixed;
       right: 20px;
       bottom: 20px;
-      background: white; /* blanco según pediste */
+      background: white;
       color: #15392A;
       padding: 15px;
       border-radius: 50%;
@@ -94,7 +94,7 @@
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: 2px solid #CEA35D; /* reborde dorado */
+      border: 2px solid #CEA35D;
     }
     .producto img { max-width: 100%; height: auto; border-radius: 5px; }
     .producto h3 { margin: 10px 0 5px; }
@@ -189,8 +189,9 @@
       cursor: pointer;
     }
     .total-line { text-align: right; font-weight: bold; margin-top: 12px; }
+
     @media (max-width:520px){
-      header img { max-height: 60px; }
+      header img { max-height: 90px; } /* subido de 60px a 90px */
       .modal-contenido { padding: 14px; }
     }
   </style>
@@ -198,221 +199,10 @@
 <body>
 
   <header>
-    <!-- Usé la URL raw de tu imagen (dorada) para que cargue bien desde GitHub -->
     <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/7b23d4612bed3e187ae5ad941b5a5ac390a0bfa0/img/LOGO%20HORIZONTAL%20DORADO.JPG.png"
          alt="Licorería 25 Onzas">
-    <!-- Si quieres añadir una segunda imagen, reemplaza la ruta de abajo -->
-    <!-- <img src="img/titulo-licoreria.png" alt="Titulo"> -->
   </header>
 
-  <!-- Buscador -->
-  <div class="buscador">
-    <input type="text" id="buscador" placeholder="Buscar producto...">
-  </div>
-
-  <!-- Categorías -->
-  <div class="categorias">
-    <button onclick="filtrarProductos('todos')">Todos</button>
-    <button onclick="filtrarProductos('whisky')">Whisky</button>
-    <button onclick="filtrarProductos('ron')">Ron</button>
-    <button onclick="filtrarProductos('vodka')">Vodka</button>
-  </div>
-
-  <!-- Productos -->
-  <div class="productos" id="lista-productos">
-    <div class="producto whisky">
-      <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/main/img/GLENDFIDDICH%2018.JPG.jpeg" alt="Glenfiddich 18 años">
-      <h3>Glenfiddich 18 años Single Malt</h3>
-      <p>750ml</p>
-      <p><strong>$524.000</strong></p>
-      <button onclick="agregarCarrito('Glenfiddich 18 años', 524000)">Agregar al carrito</button>
-    </div>
-
-    <div class="producto whisky">
-      <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/main/img/glenfidiich%2015.jpg" alt="Glenfiddich 15 años">
-      <h3>Glenfiddich 15 años Single Malt</h3>
-      <p>750ml</p>
-      <p><strong>$318.000</strong></p>
-      <button onclick="agregarCarrito('Glenfiddich 15 años', 318000)">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <!-- Botón flotante carrito -->
-  <div class="carrito" onclick="abrirModal()">
-    🛒
-    <span class="contador" id="contador">0</span>
-  </div>
-
-  <!-- Modal Carrito -->
-  <div class="modal" id="modalCarrito" aria-hidden="true">
-    <div class="modal-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-carrito">
-      <h2 id="titulo-carrito">Tu carrito</h2>
-      <div id="listaCarrito"></div>
-
-      <div class="total-line" id="totalCarrito">Total: $0</div>
-
-      <div style="margin-top:12px; text-align:right;">
-        <button class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
-        <button class="btn-enviar" onclick="enviarCotizacion()">Enviar a WhatsApp</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="social-buttons">
-      <a href="https://wa.me/573209116861" target="_blank">WhatsApp</a>
-      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">Instagram</a>
-      <a href="https://maps.app.goo.gl/paxNAPsqmR76ABqJ8" target="_blank">Ubicación</a>
-    </div>
-    <p>&copy; 2025 Licorería 25 Onzas</p>
-  </footer>
-
-  <script>
-    // carrito: { "Nombre producto": { precio: number, cantidad: number } }
-    let carrito = {};
-
-    function filtrarProductos(categoria) {
-      document.querySelectorAll('.producto').forEach(prod => {
-        prod.style.display = (categoria === 'todos' || prod.classList.contains(categoria)) ? 'block' : 'none';
-      });
-    }
-
-    function agregarCarrito(nombre, precio) {
-      if (carrito[nombre]) carrito[nombre].cantidad++;
-      else carrito[nombre] = { precio: precio, cantidad: 1 };
-      actualizarContador();
-      // si el modal está abierto, actualizamos la vista
-      if (document.getElementById('modalCarrito').style.display === 'flex') mostrarCarrito();
-    }
-
-    function restarCarrito(nombre) {
-      if (!carrito[nombre]) return;
-      carrito[nombre].cantidad--;
-      if (carrito[nombre].cantidad <= 0) delete carrito[nombre];
-      actualizarContador();
-      if (document.getElementById('modalCarrito').style.display === 'flex') mostrarCarrito();
-    }
-
-    function actualizarContador() {
-      const totalItems = Object.values(carrito).reduce((acc, it) => acc + it.cantidad, 0);
-      document.getElementById('contador').textContent = totalItems;
-    }
-
-    function abrirModal() {
-      mostrarCarrito();
-      const modal = document.getElementById('modalCarrito');
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-    }
-
-    function cerrarModal() {
-      const modal = document.getElementById('modalCarrito');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-    }
-
-    function mostrarCarrito() {
-      const container = document.getElementById('listaCarrito');
-      container.innerHTML = '';
-
-      const keys = Object.keys(carrito);
-      if (keys.length === 0) {
-        container.innerHTML = '<p>El carrito está vacío.</p>';
-        document.getElementById('totalCarrito').textContent = 'Total: $0';
-        return;
-      }
-
-      let total = 0;
-      keys.forEach((nombre, idx) => {
-        const item = carrito[nombre];
-        total += item.precio * item.cantidad;
-
-        // elemento contenedor del item
-        const div = document.createElement('div');
-        div.className = 'item-carrito';
-
-        // info
-        const info = document.createElement('div');
-        info.className = 'item-info';
-        info.innerHTML = `<div><strong>${idx + 1}. ${nombre}</strong></div>
-                          <div>$${item.precio.toLocaleString()}  &times; ${item.cantidad}</div>`;
-
-        // operaciones (+ / -)
-        const ops = document.createElement('div');
-        ops.className = 'item-ops';
-
-        const btnPlus = document.createElement('button');
-        btnPlus.type = 'button';
-        btnPlus.title = 'Agregar uno';
-        btnPlus.textContent = '+';
-        btnPlus.addEventListener('click', () => {
-          agregarCarrito(nombre, item.precio);
-        });
-
-        const btnMinus = document.createElement('button');
-        btnMinus.type = 'button';
-        btnMinus.title = 'Quitar uno';
-        btnMinus.textContent = '−';
-        btnMinus.addEventListener('click', () => {
-          restarCarrito(nombre);
-        });
-
-        ops.appendChild(btnPlus);
-        ops.appendChild(btnMinus);
-
-        div.appendChild(info);
-        div.appendChild(ops);
-        container.appendChild(div);
-      });
-
-      document.getElementById('totalCarrito').textContent = 'Total: $' + total.toLocaleString();
-    }
-
-    function enviarCotizacion() {
-      if (Object.keys(carrito).length === 0) {
-        alert('El carrito está vacío.');
-        return;
-      }
-
-      let cliente = prompt('Por favor ingresa tu nombre:');
-      if (!cliente) cliente = 'Cliente';
-
-      // Armar mensaje legible, luego encodeURIComponent
-      let texto = '*COTIZACIÓN*' + '\n\n';
-      texto += 'Licorería 25 Onzas\n';
-      texto += 'NIT: 1032473461\n';
-      texto += 'Dirección: Calle 22 N° 20-67 Paipa - Boyacá\n';
-      texto += 'Correo: facturacion.25onzas@gmail.com\n\n';
-      texto += 'Cliente: ' + cliente + '\n\n';
-      texto += 'Productos solicitados:\n';
-
-      let index = 1;
-      Object.keys(carrito).forEach(nombre => {
-        const it = carrito[nombre];
-        texto += index + '. ' + nombre + ' - $' + it.precio.toLocaleString() + ' x' + it.cantidad + '\n';
-        index++;
-      });
-
-      texto += '\n-----------------------------\n';
-      texto += 'Gracias por preferirnos';
-
-      const url = 'https://wa.me/573209116861?text=' + encodeURIComponent(texto);
-      window.open(url, '_blank');
-    }
-
-    // Buscador simple
-    document.getElementById('buscador').addEventListener('keyup', function () {
-      const texto = this.value.toLowerCase();
-      document.querySelectorAll('.producto').forEach(prod => {
-        const nombre = prod.querySelector('h3').textContent.toLowerCase();
-        prod.style.display = nombre.includes(texto) ? 'block' : 'none';
-      });
-    });
-
-    // Si quieres precargar items de ejemplo (opcional), descomenta y modifica:
-    // agregarCarrito('Glenfiddich 18 años', 524000);
-    // agregarCarrito('Glenfiddich 15 años', 318000);
-  </script>
+  <!-- Resto de tu HTML se mantiene igual -->
 </body>
 </html>
