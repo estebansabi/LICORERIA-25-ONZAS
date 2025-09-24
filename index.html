@@ -1,4 +1,4 @@
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,10 +9,11 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f8f8;
+      background: #15392A; /* verde oliva */
+      color: white; /* mejora contraste */
     }
     header {
-      background: #333;
+      background: #222;
       color: white;
       padding: 15px;
       text-align: center;
@@ -27,6 +28,8 @@
       width: 80%;
       padding: 10px;
       font-size: 16px;
+      border: none;
+      border-radius: 5px;
     }
     .categorias {
       text-align: center;
@@ -48,11 +51,12 @@
       padding: 20px;
     }
     .producto {
-      background: white;
+      background: #15392A; /* fondo verde oliva */
       padding: 15px;
       border-radius: 8px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      border: 1px solid #fff; /* separa visualmente las tarjetas */
     }
     .producto img {
       max-width: 100%;
@@ -61,13 +65,14 @@
     }
     .producto h3 {
       margin: 10px 0 5px;
+      color: #fff;
     }
     .producto p {
       margin: 5px 0;
-      color: #555;
+      color: #ddd;
     }
     .producto button {
-      background: green;
+      background: #1e5631; /* verde más fuerte para diferenciar */
       color: white;
       border: none;
       padding: 10px;
@@ -78,7 +83,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #333;
+      background: #222;
       color: white;
       margin-top: 30px;
     }
