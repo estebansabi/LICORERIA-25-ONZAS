@@ -9,13 +9,25 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #15392A; /* Verde oliva */
+      background: #15392A; /* Fondo verde oliva */
     }
     header {
-      background: #CEA35D; /* Fondo dorado */
-      color: white;        /* Letras blancas */
+      background: #15392A;
+      color: #CEA35D; /* Dorado */
       padding: 15px;
       text-align: center;
+      position: relative;
+    }
+    .carrito {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      background: #CEA35D;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
     }
     .buscador {
       margin: 10px auto;
@@ -31,16 +43,16 @@
     .categorias {
       text-align: center;
       margin: 15px 0;
+      color: #CEA35D;
     }
     .categorias button {
       margin: 5px;
       padding: 10px 15px;
       border: none;
-      background: #CEA35D; /* Fondo dorado */
-      color: white;        /* Letras blancas */
+      background: #CEA35D;
+      color: white;
       cursor: pointer;
       border-radius: 5px;
-      font-weight: bold;
     }
     .productos {
       display: grid;
@@ -54,7 +66,7 @@
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: 2px solid #CEA35D; /* Reborde dorado */
+      border: 2px solid #CEA35D; /* reborde dorado */
     }
     .producto img {
       max-width: 100%;
@@ -80,18 +92,26 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #15392A; /* Fondo verde oliva */
+      background: #15392A;
       color: white;
       margin-top: 30px;
     }
+    .social-buttons {
+      margin-bottom: 15px;
+    }
     .social-buttons a {
-      margin: 0 10px;
-      text-decoration: none;
-      background: #CEA35D; /* Fondo dorado */
-      color: white;        /* Letras blancas */
-      padding: 8px 12px;
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      background: #CEA35D;  /* dorado */
+      color: white;
       border-radius: 5px;
       font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .social-buttons a:hover {
+      background: #b38745; /* dorado más oscuro */
     }
   </style>
 </head>
@@ -99,6 +119,7 @@
   <header>
     <h1>Licorería 25 Onzas</h1>
     <p>Dirección: Calle 22 #20-67</p>
+    <div class="carrito" onclick="enviarCotizacion()">🛒 Carrito (<span id="contador">0</span>)</div>
   </header>
 
   <!-- Buscador -->
@@ -146,6 +167,8 @@
 
   <!-- Script -->
   <script>
+    let carrito = [];
+
     function filtrarProductos(categoria) {
       let productos = document.querySelectorAll('.producto');
       productos.forEach(prod => {
@@ -158,9 +181,37 @@
     }
 
     function agregarCarrito(nombre, precio) {
-      alert(nombre + " agregado al carrito por $" + precio.toLocaleString());
+      carrito.push({ nombre, precio });
+      document.getElementById('contador').textContent = carrito.length;
       let audio = new Audio('https://www.soundjay.com/buttons/button-3.mp3');
       audio.play();
+    }
+
+    function enviarCotizacion() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      let cliente = prompt("Por favor ingresa tu nombre:");
+      if (!cliente) cliente = "Cliente";
+
+      let mensaje = "*COTIZACIÓN**%0A%0A" +
+        "Licorería 25 Onzas%0A" +
+        "NIT: 1032473461%0A" +
+        "Dirección: Calle 22 N° 20-67 Paipa - Boyacá%0A" +
+        "Correo: facturacion.25onzas@gmail.com%0A%0A" +
+        "Cliente: " + cliente + "%0A%0A" +
+        "Productos solicitados:%0A";
+
+      carrito.forEach((item, index) => {
+        mensaje += (index + 1) + ". " + item.nombre + " - $" + item.precio.toLocaleString() + "%0A";
+      });
+
+      mensaje += "%0A-----------------------------%0AGracias por preferirnos";
+
+      let url = "https://wa.me/573209116861?text=" + mensaje;
+      window.open(url, "_blank");
     }
 
     // Buscador
