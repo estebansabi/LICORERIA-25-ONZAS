@@ -18,15 +18,29 @@
       text-align: center;
       position: relative;
     }
+    /* Botón flotante carrito */
     .carrito {
-      position: absolute;
+      position: fixed;
       right: 20px;
-      top: 15px;
+      bottom: 20px;
       background: #CEA35D;
       color: white;
-      padding: 8px 15px;
-      border-radius: 5px;
+      padding: 15px;
+      border-radius: 50%;
       cursor: pointer;
+      font-size: 22px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .contador {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 50%;
       font-weight: bold;
     }
     .buscador {
@@ -119,7 +133,6 @@
   <header>
     <h1>Licorería 25 Onzas</h1>
     <p>Dirección: Calle 22 #20-67</p>
-    <div class="carrito" onclick="enviarCotizacion()">🛒 Carrito (<span id="contador">0</span>)</div>
   </header>
 
   <!-- Buscador -->
@@ -153,6 +166,12 @@
       <p><strong>$318.000</strong></p>
       <button onclick="agregarCarrito('Glenfiddich 15 años', 318000)">Agregar al carrito</button>
     </div>
+  </div>
+
+  <!-- Botón flotante carrito -->
+  <div class="carrito" onclick="enviarCotizacion()">
+    🛒
+    <span class="contador" id="contador">0</span>
   </div>
 
   <!-- Botones sociales -->
