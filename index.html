@@ -20,31 +20,32 @@
       gap: 15px;
     }
     header img {
-      max-height: 120px; /* tamaño del logo */
+      max-height: 120px; /* logo más grande */
     }
-    /* Botones sociales arriba */
-    .social-buttons-top {
+    /* Redes sociales arriba */
+    .social-buttons-header {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
     }
-    .social-buttons-top a {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 30px;
+    .social-buttons-header a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 15px;
+      border-radius: 25px;
       font-weight: bold;
       text-decoration: none;
       color: white;
-      transition: transform 0.2s, opacity 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .social-buttons-top a:hover {
+    .social-buttons-header a:hover {
       transform: scale(1.05);
-      opacity: 0.9;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    .btn-whatsapp { background: #25D366; }   /* verde WhatsApp */
-    .btn-instagram { background: #E4405F; }  /* rosa Instagram */
-    .btn-ubicacion { background: #4285F4; }  /* azul Google Maps */
+    .whatsapp { background: #25D366; }
+    .instagram { background: #E4405F; }
+    .ubicacion { background: #0077FF; }
 
     /* Botón flotante carrito */
     .carrito {
@@ -138,6 +139,18 @@
       color: white;
       margin-top: 30px;
     }
+    /* Botones + y - en el carrito */
+    .boton-accion {
+      display: inline-block;
+      margin: 0 5px;
+      padding: 3px 7px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+    }
+    .sumar { background: #28a745; }   /* verde */
+    .restar { background: #dc3545; }  /* rojo */
   </style>
 </head>
 <body>
@@ -145,11 +158,11 @@
     <!-- Logo -->
     <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/7b23d4612bed3e187ae5ad941b5a5ac390a0bfa0/img/LOGO%20HORIZONTAL%20DORADO.JPG.png?raw=true" alt="Logo 25 Onzas">
 
-    <!-- Botones sociales arriba -->
-    <div class="social-buttons-top">
-      <a class="btn-whatsapp" href="https://wa.me/573209116861" target="_blank">WhatsApp</a>
-      <a class="btn-instagram" href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank">Instagram</a>
-      <a class="btn-ubicacion" href="https://maps.app.goo.gl/paxNAPsqmR76ABqJ8" target="_blank">Ubicación</a>
+    <!-- Botones sociales -->
+    <div class="social-buttons-header">
+      <a href="https://wa.me/573209116861" target="_blank" class="whatsapp">📱 WhatsApp</a>
+      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="instagram">📸 Instagram</a>
+      <a href="https://maps.app.goo.gl/paxNAPsqmR76ABqJ8" target="_blank" class="ubicacion">📍 Ubicación</a>
     </div>
   </header>
 
@@ -192,7 +205,6 @@
     <span class="contador" id="contador">0</span>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Licorería 25 Onzas</p>
   </footer>
@@ -243,12 +255,16 @@
       }
 
       let mensaje = "Tu carrito:\n\n";
+      let total = 0;
       Object.keys(carrito).forEach((nombre, index) => {
         let item = carrito[nombre];
+        total += item.precio * item.cantidad;
         mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "\n";
-        mensaje += "   ➕ Añadir otro | ➖ Quitar uno\n";
+        mensaje += "   ";
+        mensaje += "[➕] Añadir otro   [➖] Quitar uno\n";
       });
 
+      mensaje += "\nTOTAL: $" + total.toLocaleString() + "\n";
       mensaje += "\n¿Quieres enviar esta cotización a WhatsApp?";
       if (confirm(mensaje)) {
         enviarCotizacion();
@@ -259,7 +275,7 @@
       let cliente = prompt("Por favor ingresa tu nombre:");
       if (!cliente) cliente = "Cliente";
 
-      let mensaje = "*COTIZACIÓN**%0A%0A" +
+      let mensaje = "*COTIZACIÓN*%0A%0A" +
         "Licorería 25 Onzas%0A" +
         "NIT: 1032473461%0A" +
         "Dirección: Calle 22 N° 20-67 Paipa - Boyacá%0A" +
@@ -267,12 +283,16 @@
         "Cliente: " + cliente + "%0A%0A" +
         "Productos solicitados:%0A";
 
+      let total = 0;
       Object.keys(carrito).forEach((nombre, index) => {
         let item = carrito[nombre];
+        total += item.precio * item.cantidad;
         mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "%0A";
       });
 
-      mensaje += "%0A-----------------------------%0AGracias por preferirnos";
+      mensaje += "%0A-----------------------------%0A";
+      mensaje += "TOTAL: $" + total.toLocaleString() + "%0A";
+      mensaje += "Gracias por preferirnos";
 
       let url = "https://wa.me/573209116861?text=" + mensaje;
       window.open(url, "_blank");
