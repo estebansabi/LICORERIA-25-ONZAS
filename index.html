@@ -1,177 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Licorería 25 Onzas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #15392A; /* Fondo verde oliva */
-    }
-    header {
-      background: #15392A;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-    header img {
-      max-height: 120px; /* logo más grande */
-    }
-    /* Redes sociales arriba */
-    .social-buttons-header {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
-    .social-buttons-header a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 15px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .social-buttons-header a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    .whatsapp { background: #25D366; }
-    .instagram { background: #E4405F; }
-    .ubicacion { background: #0077FF; }
 
-    /* Botón flotante carrito */
-    .carrito {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: white;
-      color: #15392A;
-      padding: 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 22px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      z-index: 1000;
+  <!-- Iconos (solo para los botones sociales) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      --verde-oliva: #15392A;
+      --dorado: #CEA35D;
     }
-    .contador {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background: red;
-      color: white;
-      font-size: 12px;
-      padding: 3px 6px;
-      border-radius: 50%;
-      font-weight: bold;
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:var(--verde-oliva); color:#fff; }
+
+    /* HEADER */
+    header {
+      background:var(--verde-oliva);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
     }
-    .buscador {
-      margin: 10px auto;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
+    header img { max-height:120px; height:auto; display:block; }
+
+    /* Social buttons top */
+    .social-buttons-top {
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
-    .buscador input {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
+    .social-buttons-top a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:600;
+      color:#fff;
+      text-decoration:none;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+      transition: transform .14s ease, box-shadow .14s ease;
+      font-size:15px;
     }
-    .categorias {
-      text-align: center;
-      margin: 15px 0;
-      color: #CEA35D;
+    .social-buttons-top a:hover{ transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,0.30); }
+    .btn-whatsapp{ background:#25D366; }
+    .btn-instagram{ background:#E4405F; }
+    .btn-ubicacion{ background:#4285F4; }
+
+    /* buscador / categorias / productos */
+    .buscador{ margin:12px auto; max-width:700px; display:flex; justify-content:center; }
+    .buscador input{ width:82%; padding:10px; font-size:16px; border-radius:6px; border:none; }
+    .categorias{ text-align:center; margin:14px 0; color:var(--dorado); }
+    .categorias button{
+      margin:6px; padding:10px 14px; border:none; background:var(--dorado); color:#fff; cursor:pointer; border-radius:6px;
     }
-    .categorias button {
-      margin: 5px;
-      padding: 10px 15px;
-      border: none;
-      background: #CEA35D;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
+
+    .productos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px; padding:20px; max-width:1200px; margin:0 auto;
     }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
+    .producto{
+      background:#fff; color:#111; padding:14px; border-radius:10px; text-align:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08); border:2px solid var(--dorado);
     }
-    .producto {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: 2px solid #CEA35D; /* reborde dorado */
+    .producto img{ max-width:100%; height:auto; border-radius:6px; display:block; margin:0 auto 8px; }
+    .producto h3{ margin:8px 0 4px; font-size:18px; }
+    .producto p{ margin:6px 0; color:#555; }
+    .producto button{ background:#1e5631; color:#fff; border:none; padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:600; }
+
+    /* float carrito */
+    .carrito{
+      position:fixed; right:20px; bottom:20px; background:#fff; color:var(--verde-oliva); padding:14px;
+      border-radius:50%; font-size:22px; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.25); z-index:1100;
+      display:flex; align-items:center; justify-content:center;
     }
-    .producto img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
+    .contador{
+      position:absolute; top:10px; right:10px; background:#e43030; color:#fff; padding:4px 7px; border-radius:50%; font-weight:700; font-size:12px;
     }
-    .producto h3 {
-      margin: 10px 0 5px;
+
+    /* modal */
+    .modal{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:2000; }
+    .modal-contenido{
+      background:#fff; color:#111; border-radius:12px; width:94%; max-width:560px; padding:18px; box-shadow:0 18px 60px rgba(0,0,0,0.35);
     }
-    .producto p {
-      margin: 5px 0;
-      color: #555;
+    .modal-contenido h2{ margin:0 0 8px; color:var(--verde-oliva); }
+    .item-carrito{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #eee; gap:10px; }
+    .item-info{ max-width:62%; }
+    .item-info strong{ display:block; margin-bottom:6px; }
+    .qty-controls{ display:flex; gap:8px; align-items:center; }
+    /* botones + y - bonitos */
+    .qty-btn{
+      width:36px; height:36px; border-radius:8px; border:none; cursor:pointer; font-weight:700; color:#fff; font-size:18px;
+      display:inline-flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,0.12);
     }
-    .producto button {
-      background: green;
-      color: white;
-      border: none;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
+    .qty-btn.plus{ background:#28a745; }
+    .qty-btn.minus{ background:#dc3545; }
+    .qty-display{ min-width:36px; text-align:center; font-weight:700; }
+
+    .total-line{ text-align:right; font-weight:800; margin-top:12px; font-size:16px; color:#15392A; }
+    .modal-actions{ margin-top:14px; display:flex; justify-content:flex-end; gap:8px; }
+    .btn-cerrar{ background:#888; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+    .btn-enviar{ background:#1e5631; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700; }
+
+    footer{ text-align:center; padding:18px; background:var(--verde-oliva); color:#fff; margin-top:28px; }
+
+    @media (max-width:520px){
+      header img{ max-height:90px; }
+      .productos{ padding:12px; }
+      .qty-btn{ width:32px; height:32px; }
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #15392A;
-      color: white;
-      margin-top: 30px;
-    }
-    /* Botones + y - en el carrito */
-    .boton-accion {
-      display: inline-block;
-      margin: 0 5px;
-      padding: 3px 7px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      color: white;
-    }
-    .sumar { background: #28a745; }   /* verde */
-    .restar { background: #dc3545; }  /* rojo */
   </style>
 </head>
 <body>
-  <header>
-    <!-- Logo -->
-    <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/7b23d4612bed3e187ae5ad941b5a5ac390a0bfa0/img/LOGO%20HORIZONTAL%20DORADO.JPG.png?raw=true" alt="Logo 25 Onzas">
 
-    <!-- Botones sociales -->
-    <div class="social-buttons-header">
-      <a href="https://wa.me/573209116861" target="_blank" class="whatsapp">📱 WhatsApp</a>
-      <a href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank" class="instagram">📸 Instagram</a>
-      <a href="https://maps.app.goo.gl/paxNAPsqmR76ABqJ8" target="_blank" class="ubicacion">📍 Ubicación</a>
+  <!-- HEADER -->
+  <header>
+    <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/7b23d4612bed3e187ae5ad941b5a5ac390a0bfa0/img/LOGO%20HORIZONTAL%20DORADO.JPG.png"
+         alt="Licorería 25 Onzas">
+
+    <div class="social-buttons-top">
+      <a class="btn-whatsapp" href="https://wa.me/573209116861" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a class="btn-instagram" href="https://www.instagram.com/25.onzas?igsh=d3k1ZnlocDR0dzM=" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a class="btn-ubicacion" href="https://maps.app.goo.gl/paxNAPsqmR76ABqJ8" target="_blank"><i class="fas fa-map-marker-alt"></i> Ubicación</a>
     </div>
   </header>
 
-  <!-- Buscador -->
+  <!-- BUSCADOR -->
   <div class="buscador">
-    <input type="text" id="buscador" placeholder="Buscar producto...">
+    <input id="buscador" type="text" placeholder="Buscar producto...">
   </div>
 
-  <!-- Categorías -->
+  <!-- CATEGORÍAS -->
   <div class="categorias">
     <button onclick="filtrarProductos('todos')">Todos</button>
     <button onclick="filtrarProductos('whisky')">Whisky</button>
@@ -179,11 +143,10 @@
     <button onclick="filtrarProductos('vodka')">Vodka</button>
   </div>
 
-  <!-- Lista de productos -->
+  <!-- PRODUCTOS -->
   <div class="productos" id="lista-productos">
-    <!-- WHISKY -->
     <div class="producto whisky">
-      <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/GLENDFIDDICH%2018.JPG.jpeg?raw=true" alt="Glenfiddich 18 años">
+      <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/main/img/GLENDFIDDICH%2018.JPG.jpeg" alt="Glenfiddich 18 años">
       <h3>Glenfiddich 18 años Single Malt</h3>
       <p>750ml</p>
       <p><strong>$524.000</strong></p>
@@ -191,7 +154,7 @@
     </div>
 
     <div class="producto whisky">
-      <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/glenfidiich%2015.jpg?raw=true" alt="Glenfiddich 15 años">
+      <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/main/img/glenfidiich%2015.jpg" alt="Glenfiddich 15 años">
       <h3>Glenfiddich 15 años Single Malt</h3>
       <p>750ml</p>
       <p><strong>$318.000</strong></p>
@@ -199,111 +162,181 @@
     </div>
   </div>
 
-  <!-- Botón flotante carrito -->
-  <div class="carrito" onclick="mostrarCarrito()">
+  <!-- FLOAT CART -->
+  <div class="carrito" onclick="abrirModal()">
     🛒
-    <span class="contador" id="contador">0</span>
+    <div class="contador" id="contador">0</div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="modalCarrito" aria-hidden="true">
+    <div class="modal-contenido" role="dialog" aria-modal="true" aria-labelledby="titulo-carrito">
+      <h2 id="titulo-carrito">Tu carrito</h2>
+      <div id="listaCarrito"></div>
+
+      <div class="total-line">Total: $ <span id="totalCarrito">0</span></div>
+
+      <div class="modal-actions">
+        <button class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
+        <button class="btn-enviar" onclick="enviarCotizacion()">Enviar a WhatsApp</button>
+      </div>
+    </div>
   </div>
 
   <footer>
     <p>&copy; 2025 Licorería 25 Onzas</p>
   </footer>
 
-  <!-- Script -->
   <script>
-    let carrito = {};
+    // carrito como objeto: { nombre: { precio, cantidad } }
+    const carrito = {};
 
     function filtrarProductos(categoria) {
-      let productos = document.querySelectorAll('.producto');
-      productos.forEach(prod => {
-        if (categoria === 'todos' || prod.classList.contains(categoria)) {
-          prod.style.display = 'block';
-        } else {
-          prod.style.display = 'none';
-        }
+      document.querySelectorAll('.producto').forEach(el => {
+        if (categoria === 'todos' || el.classList.contains(categoria)) el.style.display = 'block';
+        else el.style.display = 'none';
       });
     }
 
     function agregarCarrito(nombre, precio) {
-      if (carrito[nombre]) {
-        carrito[nombre].cantidad++;
-      } else {
-        carrito[nombre] = { precio, cantidad: 1 };
-      }
+      if (carrito[nombre]) carrito[nombre].cantidad++;
+      else carrito[nombre] = { precio: precio, cantidad: 1 };
       actualizarContador();
+      // si modal visible, actualizar contenido
+      if (document.getElementById('modalCarrito').style.display === 'flex') renderizarCarrito();
     }
 
-    function restarCarrito(nombre) {
-      if (carrito[nombre]) {
-        carrito[nombre].cantidad--;
-        if (carrito[nombre].cantidad <= 0) {
-          delete carrito[nombre];
-        }
-      }
+    function quitarUnidad(nombre) {
+      if (!carrito[nombre]) return;
+      carrito[nombre].cantidad--;
+      if (carrito[nombre].cantidad <= 0) delete carrito[nombre];
       actualizarContador();
+      renderizarCarrito();
     }
 
     function actualizarContador() {
-      let totalItems = Object.values(carrito).reduce((acc, item) => acc + item.cantidad, 0);
+      const totalItems = Object.values(carrito).reduce((acc, it) => acc + it.cantidad, 0);
       document.getElementById('contador').textContent = totalItems;
     }
 
-    function mostrarCarrito() {
-      if (Object.keys(carrito).length === 0) {
-        alert("El carrito está vacío.");
+    function abrirModal() {
+      renderizarCarrito();
+      const modal = document.getElementById('modalCarrito');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    function cerrarModal() {
+      const modal = document.getElementById('modalCarrito');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    function renderizarCarrito() {
+      const container = document.getElementById('listaCarrito');
+      container.innerHTML = '';
+      const keys = Object.keys(carrito);
+      if (keys.length === 0) {
+        container.innerHTML = '<p>El carrito está vacío.</p>';
+        document.getElementById('totalCarrito').textContent = '0';
         return;
       }
 
-      let mensaje = "Tu carrito:\n\n";
       let total = 0;
-      Object.keys(carrito).forEach((nombre, index) => {
-        let item = carrito[nombre];
-        total += item.precio * item.cantidad;
-        mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "\n";
-        mensaje += "   ";
-        mensaje += "[➕] Añadir otro   [➖] Quitar uno\n";
+      keys.forEach((nombre, idx) => {
+        const it = carrito[nombre];
+        total += it.precio * it.cantidad;
+
+        // fila del item
+        const row = document.createElement('div');
+        row.className = 'item-carrito';
+
+        const info = document.createElement('div');
+        info.className = 'item-info';
+        info.innerHTML = `<strong>${idx + 1}. ${nombre}</strong>
+                          <div>$${it.precio.toLocaleString()}  × ${it.cantidad}</div>`;
+
+        const controls = document.createElement('div');
+        controls.className = 'qty-controls';
+
+        // minus button
+        const btnMinus = document.createElement('button');
+        btnMinus.className = 'qty-btn minus';
+        btnMinus.type = 'button';
+        btnMinus.title = 'Quitar uno';
+        btnMinus.innerHTML = '−';
+        btnMinus.addEventListener('click', () => {
+          quitarUnidad(nombre);
+        });
+
+        // display cantidad (opcional)
+        const qtyDisplay = document.createElement('div');
+        qtyDisplay.className = 'qty-display';
+        qtyDisplay.textContent = it.cantidad;
+
+        // plus button
+        const btnPlus = document.createElement('button');
+        btnPlus.className = 'qty-btn plus';
+        btnPlus.type = 'button';
+        btnPlus.title = 'Agregar uno';
+        btnPlus.innerHTML = '+';
+        btnPlus.addEventListener('click', () => {
+          agregarCarrito(nombre, it.precio);
+        });
+
+        controls.appendChild(btnMinus);
+        controls.appendChild(qtyDisplay);
+        controls.appendChild(btnPlus);
+
+        row.appendChild(info);
+        row.appendChild(controls);
+        container.appendChild(row);
       });
 
-      mensaje += "\nTOTAL: $" + total.toLocaleString() + "\n";
-      mensaje += "\n¿Quieres enviar esta cotización a WhatsApp?";
-      if (confirm(mensaje)) {
-        enviarCotizacion();
-      }
+      document.getElementById('totalCarrito').textContent = total.toLocaleString();
     }
 
     function enviarCotizacion() {
-      let cliente = prompt("Por favor ingresa tu nombre:");
-      if (!cliente) cliente = "Cliente";
+      const keys = Object.keys(carrito);
+      if (keys.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
 
-      let mensaje = "*COTIZACIÓN*%0A%0A" +
-        "Licorería 25 Onzas%0A" +
-        "NIT: 1032473461%0A" +
-        "Dirección: Calle 22 N° 20-67 Paipa - Boyacá%0A" +
-        "Correo: facturacion.25onzas@gmail.com%0A%0A" +
-        "Cliente: " + cliente + "%0A%0A" +
-        "Productos solicitados:%0A";
+      let cliente = prompt('Por favor ingresa tu nombre:');
+      if (!cliente) cliente = 'Cliente';
+
+      let texto = '*COTIZACIÓN*' + '\n\n';
+      texto += 'Licorería 25 Onzas\n';
+      texto += 'NIT: 1032473461\n';
+      texto += 'Dirección: Calle 22 N° 20-67 Paipa - Boyacá\n';
+      texto += 'Correo: facturacion.25onzas@gmail.com\n\n';
+      texto += 'Cliente: ' + cliente + '\n\n';
+      texto += 'Productos solicitados:\n';
 
       let total = 0;
-      Object.keys(carrito).forEach((nombre, index) => {
-        let item = carrito[nombre];
-        total += item.precio * item.cantidad;
-        mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "%0A";
+      let idx = 1;
+      keys.forEach(nombre => {
+        const it = carrito[nombre];
+        texto += idx + '. ' + nombre + ' - $' + it.precio.toLocaleString() + ' x' + it.cantidad + '\n';
+        total += it.precio * it.cantidad;
+        idx++;
       });
 
-      mensaje += "%0A-----------------------------%0A";
-      mensaje += "TOTAL: $" + total.toLocaleString() + "%0A";
-      mensaje += "Gracias por preferirnos";
+      texto += '\n-----------------------------\n';
+      texto += 'TOTAL: $' + total.toLocaleString() + '\n';
+      texto += 'Gracias por preferirnos';
 
-      let url = "https://wa.me/573209116861?text=" + mensaje;
-      window.open(url, "_blank");
+      const wa = '573209116861'; // no modifiqué este número
+      const url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(texto);
+      window.open(url, '_blank');
     }
 
-    // Buscador
-    document.getElementById('buscador').addEventListener('keyup', function() {
-      let texto = this.value.toLowerCase();
+    // BUSCADOR
+    document.getElementById('buscador').addEventListener('input', function(){
+      const q = this.value.trim().toLowerCase();
       document.querySelectorAll('.producto').forEach(prod => {
-        let nombre = prod.querySelector('h3').textContent.toLowerCase();
-        prod.style.display = nombre.includes(texto) ? 'block' : 'none';
+        const name = prod.querySelector('h3').textContent.toLowerCase();
+        prod.style.display = name.includes(q) ? 'block' : 'none';
       });
     });
   </script>
