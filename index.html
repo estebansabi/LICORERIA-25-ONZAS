@@ -13,18 +13,22 @@
     }
     header {
       background: #15392A;
-      color: #CEA35D; /* Dorado */
-      padding: 15px;
-      text-align: center;
-      position: relative;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* espacio entre las imágenes */
+    }
+    header img {
+      max-height: 80px; /* ajusta el tamaño según necesites */
     }
     /* Botón flotante carrito */
     .carrito {
       position: fixed;
       right: 20px;
       bottom: 20px;
-      background: #CEA35D;
-      color: white;
+      background: white; /* cambiado a blanco */
+      color: #15392A;
       padding: 15px;
       border-radius: 50%;
       cursor: pointer;
@@ -127,72 +131,14 @@
     .social-buttons a:hover {
       background: #b38745; /* dorado más oscuro */
     }
-
-    /* Modal carrito */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-    .modal-contenido {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      text-align: center;
-    }
-    .modal h2 {
-      margin-top: 0;
-      color: #15392A;
-    }
-    .item-carrito {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 0;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .item-carrito button {
-      background: #CEA35D;
-      border: none;
-      padding: 5px 10px;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      margin: 0 2px;
-    }
-    .cerrar {
-      background: red;
-      padding: 8px 15px;
-      color: white;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .enviar {
-      background: green;
-      padding: 10px 20px;
-      color: white;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Licorería 25 Onzas</h1>
-    <p>Dirección: Calle 22 #20-67</p>
+    <!-- Imagen con el título -->
+    <img src="img/titulo-licoreria.png" alt="Licorería 25 Onzas">
+    <!-- Logo -->
+    <img src="img/logo-licoreria.png" alt="Logo 25 Onzas">
   </header>
 
   <!-- Buscador -->
@@ -210,6 +156,7 @@
 
   <!-- Lista de productos -->
   <div class="productos" id="lista-productos">
+    <!-- WHISKY -->
     <div class="producto whisky">
       <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/main/img/GLENDFIDDICH%2018.JPG.jpeg?raw=true" alt="Glenfiddich 18 años">
       <h3>Glenfiddich 18 años Single Malt</h3>
@@ -228,19 +175,9 @@
   </div>
 
   <!-- Botón flotante carrito -->
-  <div class="carrito" onclick="abrirModal()">
+  <div class="carrito" onclick="mostrarCarrito()">
     🛒
     <span class="contador" id="contador">0</span>
-  </div>
-
-  <!-- Modal Carrito -->
-  <div class="modal" id="modalCarrito">
-    <div class="modal-contenido">
-      <h2>Tu Carrito</h2>
-      <div id="listaCarrito"></div>
-      <button class="enviar" onclick="enviarCotizacion()">Enviar a WhatsApp</button>
-      <button class="cerrar" onclick="cerrarModal()">Cerrar</button>
-    </div>
   </div>
 
   <!-- Botones sociales -->
@@ -253,12 +190,18 @@
     <p>&copy; 2025 Licorería 25 Onzas</p>
   </footer>
 
+  <!-- Script -->
   <script>
     let carrito = {};
 
     function filtrarProductos(categoria) {
-      document.querySelectorAll('.producto').forEach(prod => {
-        prod.style.display = (categoria === 'todos' || prod.classList.contains(categoria)) ? 'block' : 'none';
+      let productos = document.querySelectorAll('.producto');
+      productos.forEach(prod => {
+        if (categoria === 'todos' || prod.classList.contains(categoria)) {
+          prod.style.display = 'block';
+        } else {
+          prod.style.display = 'none';
+        }
       });
     }
 
@@ -279,7 +222,6 @@
         }
       }
       actualizarContador();
-      mostrarCarrito();
     }
 
     function actualizarContador() {
@@ -287,45 +229,26 @@
       document.getElementById('contador').textContent = totalItems;
     }
 
-    function abrirModal() {
-      mostrarCarrito();
-      document.getElementById('modalCarrito').style.display = "flex";
-    }
-
-    function cerrarModal() {
-      document.getElementById('modalCarrito').style.display = "none";
-    }
-
     function mostrarCarrito() {
-      let lista = document.getElementById('listaCarrito');
-      lista.innerHTML = "";
-
-      if (Object.keys(carrito).length === 0) {
-        lista.innerHTML = "<p>El carrito está vacío.</p>";
-        return;
-      }
-
-      Object.keys(carrito).forEach((nombre, index) => {
-        let item = carrito[nombre];
-        let div = document.createElement("div");
-        div.classList.add("item-carrito");
-        div.innerHTML = `
-          <span>${index + 1}. ${nombre} - $${item.precio.toLocaleString()} x ${item.cantidad}</span>
-          <div>
-            <button onclick="agregarCarrito('${nombre}', ${item.precio})">+</button>
-            <button onclick="restarCarrito('${nombre}')">-</button>
-          </div>
-        `;
-        lista.appendChild(div);
-      });
-    }
-
-    function enviarCotizacion() {
       if (Object.keys(carrito).length === 0) {
         alert("El carrito está vacío.");
         return;
       }
 
+      let mensaje = "Tu carrito:\n\n";
+      Object.keys(carrito).forEach((nombre, index) => {
+        let item = carrito[nombre];
+        mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "\n";
+        mensaje += "   ➕ Añadir otro | ➖ Quitar uno\n";
+      });
+
+      mensaje += "\n¿Quieres enviar esta cotización a WhatsApp?";
+      if (confirm(mensaje)) {
+        enviarCotizacion();
+      }
+    }
+
+    function enviarCotizacion() {
       let cliente = prompt("Por favor ingresa tu nombre:");
       if (!cliente) cliente = "Cliente";
 
