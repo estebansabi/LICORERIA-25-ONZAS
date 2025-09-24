@@ -169,7 +169,7 @@
   </div>
 
   <!-- Botón flotante carrito -->
-  <div class="carrito" onclick="enviarCotizacion()">
+  <div class="carrito" onclick="mostrarCarrito()">
     🛒
     <span class="contador" id="contador">0</span>
   </div>
@@ -186,7 +186,7 @@
 
   <!-- Script -->
   <script>
-    let carrito = [];
+    let carrito = {};
 
     function filtrarProductos(categoria) {
       let productos = document.querySelectorAll('.producto');
@@ -200,18 +200,47 @@
     }
 
     function agregarCarrito(nombre, precio) {
-      carrito.push({ nombre, precio });
-      document.getElementById('contador').textContent = carrito.length;
-      let audio = new Audio('https://www.soundjay.com/buttons/button-3.mp3');
-      audio.play();
+      if (carrito[nombre]) {
+        carrito[nombre].cantidad++;
+      } else {
+        carrito[nombre] = { precio, cantidad: 1 };
+      }
+      actualizarContador();
     }
 
-    function enviarCotizacion() {
-      if (carrito.length === 0) {
+    function restarCarrito(nombre) {
+      if (carrito[nombre]) {
+        carrito[nombre].cantidad--;
+        if (carrito[nombre].cantidad <= 0) {
+          delete carrito[nombre];
+        }
+      }
+      actualizarContador();
+    }
+
+    function actualizarContador() {
+      let totalItems = Object.values(carrito).reduce((acc, item) => acc + item.cantidad, 0);
+      document.getElementById('contador').textContent = totalItems;
+    }
+
+    function mostrarCarrito() {
+      if (Object.keys(carrito).length === 0) {
         alert("El carrito está vacío.");
         return;
       }
 
+      let mensaje = "Tu carrito:\n\n";
+      Object.keys(carrito).forEach((nombre, index) => {
+        mensaje += (index + 1) + ". " + nombre + " - $" + carrito[nombre].precio.toLocaleString() + " x" + carrito[nombre].cantidad + "\n";
+      });
+
+      mensaje += "\n¿Quieres enviar esta cotización a WhatsApp?";
+      if (confirm(mensaje)) {
+        enviarCotizacion();
+      }
+    }
+
+    function enviarCotizacion() {
       let cliente = prompt("Por favor ingresa tu nombre:");
       if (!cliente) cliente = "Cliente";
 
@@ -223,8 +252,9 @@
         "Cliente: " + cliente + "%0A%0A" +
         "Productos solicitados:%0A";
 
-      carrito.forEach((item, index) => {
-        mensaje += (index + 1) + ". " + item.nombre + " - $" + item.precio.toLocaleString() + "%0A";
+      Object.keys(carrito).forEach((nombre, index) => {
+        let item = carrito[nombre];
+        mensaje += (index + 1) + ". " + nombre + " - $" + item.precio.toLocaleString() + " x" + item.cantidad + "%0A";
       });
 
       mensaje += "%0A-----------------------------%0AGracias por preferirnos";
