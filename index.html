@@ -561,7 +561,21 @@ buscadorInput.addEventListener('input', function() {
     const categoriaVisible = prod.style.display !== 'none'; // respeta el filtro
     prod.style.display = (name.includes(query) && categoriaVisible) ? 'block' : 'none';
   });
-    });
+    // Actualiza el precio mostrado al cambiar la presentación
+function actualizarPrecio(precioId, selectEl) {
+  const [ml, precio] = selectEl.value.split("|");
+  document.getElementById(precioId).textContent = "$" + Number(precio).toLocaleString();
+}
+
+// Agregar al carrito con presentación seleccionada
+function agregarPresentacion(nombre, selectId) {
+  const select = document.getElementById(selectId);
+  const [ml, precio] = select.value.split("|");
+  const nombreCompleto = `${nombre} ${ml}`;
+  agregarCarrito(nombreCompleto, Number(precio));
+}
+
+    
   </script>
 </body>
 </html>
