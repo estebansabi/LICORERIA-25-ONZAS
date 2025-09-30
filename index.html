@@ -157,6 +157,26 @@
 
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
+  <!-- Chivas Extra 13 años (varias presentaciones) -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/487f56996df150b094aef096855ecdd52b65f070/img/imagenes/whisky/chivas13.jpg.jpeg?raw=true"
+       alt="Chivas Extra 13 años Blended">
+  <h3>Chivas Extra 13 años Blended</h3>
+
+  <select id="chivas13Select" onchange="actualizarPrecio('chivas13Precio', this)">
+    <option value="200ml|52500">200ml - $52.500</option>
+    <option value="375ml|90000">375ml - $90.000</option>
+    <option value="750ml|164000" selected>750ml - $164.000</option>
+    <option value="1000ml|208000">1000ml - $208.000</option>
+  </select>
+
+  <p><strong id="chivas13Precio">$164.000</strong></p>
+
+  <button onclick="agregarPresentacion('Chivas Extra 13 años Blended', 'chivas13Select')">
+    Agregar al carrito
+  </button>
+</div>
+
 
   <!-- Chivas Extra Tequila -->
 <div class="producto whisky">
