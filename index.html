@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Buchanans Master -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/7ca7a8f70be85416baea244dc2b40f038ec2b35c/img/imagenes/whisky/buchanansmaster.jpg.jpeg?raw=true" 
+       alt="Buchanans Master">
+  <h3>Buchanans Master</h3>
+
+  <select id="buchanansMasterSelect" onchange="actualizarPrecio('buchanansMasterPrecio', this)">
+    <option value="750ml|194000" selected>750ml - $194.000</option>
+    <option value="1000ml|240000">1000ml - $240.000</option>
+  </select>
+
+  <p><strong id="buchanansMasterPrecio">$194.000</strong></p>
+
+  <button onclick="agregarPresentacion('Buchanans Master', 'buchanansMasterSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Buchanans Two Souls -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/5b17346085a9160b5f796ceea5c186c3280fe6dd/img/imagenes/whisky/buchananstwo.jpg.jpeg?raw=true" 
