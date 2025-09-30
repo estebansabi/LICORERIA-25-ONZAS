@@ -553,6 +553,7 @@
     }
 
    // BUSCADOR FUNCIONAL CON FILTRO
+// BUSCADOR FUNCIONAL CON FILTRO
 const buscadorInput = document.getElementById('buscador');
 buscadorInput.addEventListener('input', function() {
   const query = this.value.trim().toLowerCase();
@@ -561,10 +562,21 @@ buscadorInput.addEventListener('input', function() {
     const categoriaVisible = prod.style.display !== 'none'; // respeta el filtro
     prod.style.display = (name.includes(query) && categoriaVisible) ? 'block' : 'none';
   });
-    // Actualiza el precio mostrado al cambiar la presentación
+}); // 👈 aquí cierro correctamente la función del buscador
+
+// 👇 YA AFUERA VAN ESTAS DOS FUNCIONES
 function actualizarPrecio(precioId, selectEl) {
   const [ml, precio] = selectEl.value.split("|");
   document.getElementById(precioId).textContent = "$" + Number(precio).toLocaleString();
+}
+
+function agregarPresentacion(nombre, selectId) {
+  const select = document.getElementById(selectId);
+  const [ml, precio] = select.value.split("|");
+  const nombreCompleto = `${nombre} ${ml}`;
+  agregarCarrito(nombreCompleto, Number(precio));
+}
+
 }
 
 // Agregar al carrito con presentación seleccionada
