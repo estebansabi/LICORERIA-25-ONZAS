@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Johnnie Walker Red Label -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/4c09d01619877380f688217a33a5e7a8f808ddc4/img/imagenes/whisky/redlabel.jpg.jpeg?raw=true"
+       alt="Johnnie Walker Red Label">
+  <h3>Johnnie Walker Red Label</h3>
+
+  <select id="jwRedLabelSelect" onchange="actualizarPrecio('jwRedLabelPrecio', this)">
+    <option value="375ml|48500">375ml - $48.500</option>
+    <option value="750ml|73000" selected>750ml - $73.000</option>
+    <option value="1000ml|95000">1000ml - $95.000</option>
+  </select>
+
+  <p><strong id="jwRedLabelPrecio">$73.000</strong></p>
+
+  <button onclick="agregarPresentacion('Johnnie Walker Red Label', 'jwRedLabelSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Johnnie Walker Black Label -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/ad030d0e20f6ac9b4bee5a7c2a16480ce7ffaaef/img/imagenes/whisky/blacklabel.jpg.jpeg?raw=true"
