@@ -158,6 +158,26 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Ballantine’s Finest -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/f2fb73958d5cca70d85d0aef21f86b5effbf38d2/img/imagenes/whisky/ballantines.jpg.jpeg?raw=true"
+       alt="Ballantine’s Finest">
+  <h3>Ballantine’s Finest</h3>
+
+  <select id="ballantinesSelect" onchange="actualizarPrecio('ballantinesPrecio', this)">
+    <option value="200ml|25000">200ml - $25.000</option>
+    <option value="375ml|39000">375ml - $39.000</option>
+    <option value="750ml|71000" selected>750ml - $71.000</option>
+    <option value="1000ml|92000">1000ml - $92.000</option>
+  </select>
+
+  <p><strong id="ballantinesPrecio">$71.000</strong></p>
+
+  <button onclick="agregarPresentacion('Ballantine’s Finest', 'ballantinesSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Something Especial -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/f8258a6fac50db8b0bab1720f6d59b23aab96038/img/imagenes/whisky/something.jpg.jpeg?raw=true"
