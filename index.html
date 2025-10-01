@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Buchanans Dluxe 12 años -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/1393037ac66189e7431fa2e745fade7f2d94104c/img/imagenes/whisky/buchanansdluxe.jpg.jpeg?raw=true" 
+       alt="Buchanans Dluxe 12 años">
+  <h3>Buchanans Dluxe 12 años</h3>
+
+  <select id="buchanansDluxeSelect" onchange="actualizarPrecio('buchanansDluxePrecio', this)">
+    <option value="375ml|98000">375ml - $98.000</option>
+    <option value="750ml|165000" selected>750ml - $165.000</option>
+    <option value="1000ml|212000">1000ml - $212.000</option>
+  </select>
+
+  <p><strong id="buchanansDluxePrecio">$165.000</strong></p>
+
+  <button onclick="agregarPresentacion('Buchanans Dluxe 12 años', 'buchanansDluxeSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Buchanans Master -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/7ca7a8f70be85416baea244dc2b40f038ec2b35c/img/imagenes/whisky/buchanansmaster.jpg.jpeg?raw=true" 
