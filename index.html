@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Old Parr 12 años -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/e16b37ee3cd2631bbbd3245c20da8440cf1ebd35/img/imagenes/whisky/oldparr12.jpg.jpeg?raw=true"
+       alt="Old Parr 12 años">
+  <h3>Old Parr 12 años</h3>
+
+  <select id="oldParr12Select" onchange="actualizarPrecio('oldParr12Precio', this)">
+    <option value="500ml|107000">500ml - $107.000</option>
+    <option value="750ml|145500" selected>750ml - $145.500</option>
+    <option value="1000ml|184000">1000ml - $184.000</option>
+  </select>
+
+  <p><strong id="oldParr12Precio">$145.500</strong></p>
+
+  <button onclick="agregarPresentacion('Old Parr 12 años', 'oldParr12Select')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Johnnie Walker Red Label -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/4c09d01619877380f688217a33a5e7a8f808ddc4/img/imagenes/whisky/redlabel.jpg.jpeg?raw=true"
