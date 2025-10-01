@@ -166,6 +166,24 @@
   <p>750ml</p>
   <p><strong>$120.000</strong
 
+    <!-- Jameson Triple Distilled -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b3b6691f2d78016cf70e0b886e6d072760a0b715/img/imagenes/whisky/jameson.jpg.jpeg?raw=true"
+       alt="Jameson Triple Distilled">
+  <h3>Jameson Triple Distilled</h3>
+
+  <select id="jamesonSelect" onchange="actualizarPrecio('jamesonPrecio', this)">
+    <option value="375ml|72500">375ml - $72.500</option>
+    <option value="750ml|129000" selected>750ml - $129.000</option>
+  </select>
+
+  <p><strong id="jamesonPrecio">$129.000</strong></p>
+
+  <button onclick="agregarPresentacion('Jameson Triple Distilled', 'jamesonSelect')">
+    Agregar al carrito
+  </button>
+</div>
+                       
   <!-- Jack Daniels Apple -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/e30716b5f4aa2442a5c732fa419648b01063371a/img/imagenes/whisky/jdapple.jpg.jpeg?raw=true"
