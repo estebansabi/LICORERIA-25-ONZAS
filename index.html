@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Jack Daniels No 7 -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/6df85874b20e29ed7a3dde5b604d0d7e39f84cac/img/imagenes/whisky/jdsiete.jpg.jpeg?raw=true"
+       alt="Jack Daniels No 7">
+  <h3>Jack Daniels No 7</h3>
+
+  <select id="jackDaniels7Select" onchange="actualizarPrecio('jackDaniels7Precio', this)">
+    <option value="375ml|79000">375ml - $79.000</option>
+    <option value="750ml|145000" selected>750ml - $145.000</option>
+  </select>
+
+  <p><strong id="jackDaniels7Precio">$145.000</strong></p>
+
+  <button onclick="agregarPresentacion('Jack Daniels No 7', 'jackDaniels7Select')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Dewar’s 12 años Blended -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/f1a5b83e4fe37f9c7504538ab9db9a0acd707cf3/img/imagenes/whisky/dewars12.jpg.jpeg?raw=true"
