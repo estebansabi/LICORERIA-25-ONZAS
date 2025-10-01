@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Monkey Shoulder Blended Malt -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/5db46737e884dc396cce50ae25f532261449f534/img/imagenes/whisky/monkey.jpg.jpeg?raw=true"
+       alt="Monkey Shoulder Blended Malt">
+  <h3>Monkey Shoulder Blended Malt</h3>
+
+  <select id="monkeyShoulderSelect" onchange="actualizarPrecio('monkeyShoulderPrecio', this)">
+    <option value="50ml|20000">50ml - $20.000</option>
+    <option value="750ml|160000" selected>750ml - $160.000</option>
+  </select>
+
+  <p><strong id="monkeyShoulderPrecio">$160.000</strong></p>
+
+  <button onclick="agregarPresentacion('Monkey Shoulder Blended Malt', 'monkeyShoulderSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Cragganmore 12 años Single Malt -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/777f8e6e453b22fb7e1cec4f6d1433988b84e489/img/imagenes/whisky/craganmore.jpg.jpeg?raw=true"
