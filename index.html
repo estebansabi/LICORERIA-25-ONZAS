@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Passport Scotch -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/95b346a6b35e55c0e82f85e4a20f9936d6bbd167/img/imagenes/whisky/passport.jpg.jpeg?raw=true"
+       alt="Passport Scotch">
+  <h3>Passport Scotch</h3>
+
+  <select id="passportScotchSelect" onchange="actualizarPrecio('passportScotchPrecio', this)">
+    <option value="200ml|17000">200ml - $17.000</option>
+    <option value="750ml|57000" selected>750ml - $57.000</option>
+    <option value="1000ml|76000">1000ml - $76.000</option>
+  </select>
+
+  <p><strong id="passportScotchPrecio">$57.000</strong></p>
+
+  <button onclick="agregarPresentacion('Passport Scotch', 'passportScotchSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Clan Mac Gregor 750ml -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/3ed3a891f18de01f1695154ecf27c9a9c0238629/img/imagenes/whisky/mcgregor.jpg.jpeg?raw=true"
