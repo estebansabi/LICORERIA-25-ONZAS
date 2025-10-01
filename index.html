@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Jack Daniels Honey -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/0d93071c432c7fbc003c6df16e31b01c1a854f2a/img/imagenes/whisky/jdhoney.jpg.jpeg?raw=true"
+       alt="Jack Daniels Honey">
+  <h3>Jack Daniels Honey</h3>
+
+  <select id="jackDanielsHoneySelect" onchange="actualizarPrecio('jackDanielsHoneyPrecio', this)">
+    <option value="375ml|79000">375ml - $79.000</option>
+    <option value="750ml|145000" selected>750ml - $145.000</option>
+  </select>
+
+  <p><strong id="jackDanielsHoneyPrecio">$145.000</strong></p>
+
+  <button onclick="agregarPresentacion('Jack Daniels Honey', 'jackDanielsHoneySelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Jack Daniels No 7 -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/6df85874b20e29ed7a3dde5b604d0d7e39f84cac/img/imagenes/whisky/jdsiete.jpg.jpeg?raw=true"
