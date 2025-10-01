@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Johnnie Walker Black Label -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/ad030d0e20f6ac9b4bee5a7c2a16480ce7ffaaef/img/imagenes/whisky/blacklabel.jpg.jpeg?raw=true"
+       alt="Johnnie Walker Black Label">
+  <h3>Johnnie Walker Black Label</h3>
+
+  <select id="jwBlackLabelSelect" onchange="actualizarPrecio('jwBlackLabelPrecio', this)">
+    <option value="375ml|86000">375ml - $86.000</option>
+    <option value="700ml|153000" selected>700ml - $153.000</option>
+    <option value="1000ml|192000">1000ml - $192.000</option>
+  </select>
+
+  <p><strong id="jwBlackLabelPrecio">$153.000</strong></p>
+
+  <button onclick="agregarPresentacion('Johnnie Walker Black Label', 'jwBlackLabelSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Johnnie Walker Double Black -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/cb2062625a4101a88ce9d6b15dc8c986f594012f/img/imagenes/whisky/doubleblack.jpg.jpeg?raw=true"
