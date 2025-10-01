@@ -158,6 +158,26 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Black & White -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/2fe3b2a9de620b754b271930dda64f2084f1ebd2/img/imagenes/whisky/black%26white.jpg.jpeg?raw=true"
+       alt="Black & White">
+  <h3>Black & White</h3>
+
+  <select id="blackWhiteSelect" onchange="actualizarPrecio('blackWhitePrecio', this)">
+    <option value="375ml|33000">375ml - $33.000</option>
+    <option value="750ml|58500">750ml - $58.500</option>
+    <option value="1000ml|78500">1000ml - $78.500</option>
+    <option value="1500ml|105000">1500ml - $105.000</option>
+  </select>
+
+  <p><strong id="blackWhitePrecio">$58.500</strong></p>
+
+  <button onclick="agregarPresentacion('Black & White', 'blackWhiteSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Ballantine’s Finest -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/f2fb73958d5cca70d85d0aef21f86b5effbf38d2/img/imagenes/whisky/ballantines.jpg.jpeg?raw=true"
