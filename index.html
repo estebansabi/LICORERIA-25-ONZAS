@@ -158,6 +158,26 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Grant’s Triple Wood -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/0c6688d340f57855237be469449c974dd9317470/img/imagenes/whisky/grantstriple.jpg.jpeg?raw=true"
+       alt="Grant’s Triple Wood">
+  <h3>Grant’s Triple Wood</h3>
+
+  <select id="grantsTripleSelect" onchange="actualizarPrecio('grantsTriplePrecio', this)">
+    <option value="200ml|26500">200ml - $26.500</option>
+    <option value="375ml|41000">375ml - $41.000</option>
+    <option value="750ml|72000" selected>750ml - $72.000</option>
+    <option value="1000ml|95000">1000ml - $95.000</option>
+  </select>
+
+  <p><strong id="grantsTriplePrecio">$72.000</strong></p>
+
+  <button onclick="agregarPresentacion('Grant’s Triple Wood', 'grantsTripleSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Grant’s Ale Cask 750ml -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/a8d996bb475ac629fcdcd4696460c88f293fa003/img/imagenes/whisky/grantsalecask.jpg.jpeg?raw=true"
