@@ -158,6 +158,26 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Something Especial -->
+<div class="producto whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/f8258a6fac50db8b0bab1720f6d59b23aab96038/img/imagenes/whisky/something.jpg.jpeg?raw=true"
+       alt="Something Especial">
+  <h3>Something Especial</h3>
+
+  <select id="somethingEspecialSelect" onchange="actualizarPrecio('somethingEspecialPrecio', this)">
+    <option value="200ml|26000">200ml - $26.000</option>
+    <option value="375ml|49000">375ml - $49.000</option>
+    <option value="750ml|75000" selected>750ml - $75.000</option>
+    <option value="1000ml|97000">1000ml - $97.000</option>
+  </select>
+
+  <p><strong id="somethingEspecialPrecio">$75.000</strong></p>
+
+  <button onclick="agregarPresentacion('Something Especial', 'somethingEspecialSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- The Famous Grouse 700ml -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/1b10d72afe1b4847d89839ee354c5d88fe0136af/img/imagenes/whisky/famous.jpg.jpeg?raw=true"
