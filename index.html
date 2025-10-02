@@ -309,10 +309,7 @@
   <p><strong>$120.000</strong></p>
   <button onclick="agregarCarrito('Tullamore Dew 750ml', 120000)">Agregar al carrito</button>
 </div>
-
-
-
-
+  
     <!-- Jameson Triple Distilled -->
 <div class="producto whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b3b6691f2d78016cf70e0b886e6d072760a0b715/img/imagenes/whisky/jameson.jpg.jpeg?raw=true"
@@ -700,17 +697,24 @@
   <p><strong>$320.000</strong></p>
   <button onclick="agregarCarrito('Singleton 15 años Single Malt', 320000)">Agregar al carrito</button>
 </div>
+<!-- Glenfiddich 12 años -->
+<div class="producto whisky">
+  <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/a6b6bf6e7758331e0810c0e66f4b1b7e230697f6/img/imagenes/whisky/GLENFIDDICH%2012.JPG.jpeg"
+       alt="Glenfiddich 12 años Single Malt">
+  <h3>Glenfiddich 12 años Single Malt</h3>
 
-  <!-- Glenfiddich 12 años -->
-  <div class="producto whisky">
-    <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/a6b6bf6e7758331e0810c0e66f4b1b7e230697f6/img/imagenes/whisky/GLENFIDDICH%2012.JPG.jpeg"
-         alt="Glenfiddich 12 años Single Malt">
-    <h3>Glenfiddich 12 años Single Malt</h3>
-    <p>750ml</p>
-    <p><strong>$228.000</strong></p>
-    <button onclick="agregarCarrito('Glenfiddich 12 años Single Malt', 228000)">Agregar al carrito</button>
-  </div>
+  <select id="presentacion-glenfiddich12" onchange="actualizarPrecio('precio-glenfiddich12', this)">
+    <option value="375ml|134500">375 ml — $134.500</option>
+    <option value="750ml|228000">750 ml — $228.000</option>
+  </select>
 
+  <p id="precio-glenfiddich12"><strong>$134.500</strong></p>
+  <button onclick="agregarPresentacion('Glenfiddich 12 años Single Malt', 'presentacion-glenfiddich12')">
+    Agregar al carrito
+  </button>
+</div>
+
+ 
   <!-- Glenfiddich 15 años -->
   <div class="producto whisky">
     <img src="https://raw.githubusercontent.com/estebansabi/LICORERIA-25-ONZAS/a6b6bf6e7758331e0810c0e66f4b1b7e230697f6/img/imagenes/whisky/GLENFIDDICH%2015.JPG.jpeg"
