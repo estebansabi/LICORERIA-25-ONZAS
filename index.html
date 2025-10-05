@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Brandy Domecq -->
+<div class="producto brandy">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/8375a669d6195e0a0a18a8a5ff69ea3e5d288ffc/imagenes/cervezas_importadas/brandydomecq.jpg.jpeg?raw=true"
+       alt="Brandy Domecq">
+  <h3>Brandy Domecq</h3>
+
+  <select id="domecqSelect" onchange="actualizarPrecio('domecqPrecio', this)">
+    <option value="375ml|33500">375 ml — $33.500</option>
+    <option value="750ml|63500">750 ml — $63.500</option>
+  </select>
+
+  <p id="domecqPrecio"><strong>$33.500</strong></p>
+
+  <button onclick="agregarPresentacion('Brandy Domecq', 'domecqSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Brandy Cinco Estrellas 375ml -->
 <div class="producto brandy">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b110573fae03e52306e4d96669799ecb401f6f02/imagenes/cervezas_importadas/brandyestrellas.jpg.jpeg?raw=true"
