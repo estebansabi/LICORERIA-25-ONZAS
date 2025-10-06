@@ -158,6 +158,26 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Amarillo de Manzanares -->
+<div class="producto aguardiente">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/4bf0779b6043280f52cba34acfbaf0fbb66c76f6/imagenes/aguardiente/manzanares.jpg.jpeg?raw=true"
+       alt="Amarillo de Manzanares">
+  <h3>Amarillo de Manzanares</h3>
+
+  <select id="manzanaresSelect" onchange="actualizarPrecio('manzanaresPrecio', this)">
+    <option value="375ml|30000">375 ml — $30.000</option>
+    <option value="750ml|55000">750 ml — $55.000</option>
+    <option value="1000ml|70000">1000 ml — $70.000</option>
+    <option value="1500ml|102000">1500 ml — $102.000</option>
+  </select>
+
+  <p id="manzanaresPrecio"><strong>$30.000</strong></p>
+
+  <button onclick="agregarPresentacion('Amarillo de Manzanares', 'manzanaresSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Onix Sello Negro Edición Especial 750ml -->
 <div class="producto aguardiente">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/7def187469e33784bbd09693df921155caea058e/imagenes/aguardiente/onixespecial.jpg.jpeg?raw=true"
