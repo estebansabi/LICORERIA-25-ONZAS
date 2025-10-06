@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Onix Gris -->
+<div class="producto aguardiente">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/682dae47775021eb7ad2def68ee192946b600763/imagenes/aguardiente/onixgris.jpg.jpeg?raw=true"
+       alt="Onix Gris">
+  <h3>Onix Gris</h3>
+
+  <select id="onixGrisSelect" onchange="actualizarPrecio('onixGrisPrecio', this)">
+    <option value="375ml|32000">375 ml — $32.000</option>
+    <option value="750ml|64000">750 ml — $64.000</option>
+  </select>
+
+  <p id="onixGrisPrecio"><strong>$32.000</strong></p>
+
+  <button onclick="agregarPresentacion('Onix Gris', 'onixGrisSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Onix Sello Negro Tradicional -->
 <div class="producto aguardiente">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/6a4056f5004cc7f91387e630f3e09cba45b42870/imagenes/aguardiente/onixnegro.jpg.jpeg?raw=true"
