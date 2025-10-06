@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Onix Sello Negro Tradicional -->
+<div class="producto aguardiente">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/6a4056f5004cc7f91387e630f3e09cba45b42870/imagenes/aguardiente/onixnegro.jpg.jpeg?raw=true"
+       alt="Onix Sello Negro Tradicional">
+  <h3>Onix Sello Negro Tradicional</h3>
+
+  <select id="onixNegroSelect" onchange="actualizarPrecio('onixNegroPrecio', this)">
+    <option value="375ml|27500">375 ml — $27.500</option>
+    <option value="750ml|52500">750 ml — $52.500</option>
+    <option value="1500ml|97000">1500 ml — $97.000</option>
+  </select>
+
+  <p id="onixNegroPrecio"><strong>$27.500</strong></p>
+
+  <button onclick="agregarPresentacion('Onix Sello Negro Tradicional', 'onixNegroSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Onix 100 Amarillo -->
 <div class="producto aguardiente">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/2a13e42899cfd3fbeb02dce45085d5ec898f520a/imagenes/aguardiente/onixamarillo.jpg.jpeg?raw=true"
