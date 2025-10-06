@@ -158,6 +158,26 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Lider Azul -->
+<div class="producto aguardiente">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/387f8717a4b857556f69e1f0051c321e3daa7c4b/imagenes/aguardiente/liderazul.jpg.jpeg?raw=true"
+       alt="Lider Azul">
+  <h3>Lider Azul</h3>
+
+  <select id="liderAzulSelect" onchange="actualizarPrecio('liderAzulPrecio', this)">
+    <option value="175ml|14000">175 ml — $14.000</option>
+    <option value="375ml|30000">375 ml — $30.000</option>
+    <option value="750ml|52500">750 ml — $52.500</option>
+    <option value="1500ml|99000">1500 ml — $99.000</option>
+  </select>
+
+  <p id="liderAzulPrecio"><strong>$14.000</strong></p>
+
+  <button onclick="agregarPresentacion('Lider Azul', 'liderAzulSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Lider Verde -->
 <div class="producto aguardiente">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/01350a8d0ae4ebde3cb3551ffd5e87dee98bd608/imagenes/aguardiente/liderverde.jpg.jpeg?raw=true"
