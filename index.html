@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Brandy Casa Grajales -->
+<div class="producto brandy">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/cd3ab69938e95a3cfe14d9b03c38b6beb81b21d5/imagenes/cervezas_importadas/brandygrajales.jpg.jpeg?raw=true"
+       alt="Brandy Casa Grajales">
+  <h3>Brandy Casa Grajales</h3>
+
+  <select id="grajalesSelect" onchange="actualizarPrecio('grajalesPrecio', this)">
+    <option value="375ml|33000">375 ml — $33.000</option>
+    <option value="750ml|62000">750 ml — $62.000</option>
+  </select>
+
+  <p id="grajalesPrecio"><strong>$33.000</strong></p>
+
+  <button onclick="agregarPresentacion('Brandy Casa Grajales', 'grajalesSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Brandy Domecq -->
 <div class="producto brandy">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/8375a669d6195e0a0a18a8a5ff69ea3e5d288ffc/imagenes/cervezas_importadas/brandydomecq.jpg.jpeg?raw=true"
