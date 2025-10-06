@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Onix 100 Amarillo -->
+<div class="producto aguardiente">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/2a13e42899cfd3fbeb02dce45085d5ec898f520a/imagenes/aguardiente/onixamarillo.jpg.jpeg?raw=true"
+       alt="Onix 100 Amarillo">
+  <h3>Onix 100 Amarillo</h3>
+
+  <select id="onix100AmarilloSelect" onchange="actualizarPrecio('onix100AmarilloPrecio', this)">
+    <option value="375ml|30000">375 ml — $30.000</option>
+    <option value="750ml|52500">750 ml — $52.500</option>
+  </select>
+
+  <p id="onix100AmarilloPrecio"><strong>$30.000</strong></p>
+
+  <button onclick="agregarPresentacion('Onix 100 Amarillo', 'onix100AmarilloSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Lider Azul -->
 <div class="producto aguardiente">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/387f8717a4b857556f69e1f0051c321e3daa7c4b/imagenes/aguardiente/liderazul.jpg.jpeg?raw=true"
