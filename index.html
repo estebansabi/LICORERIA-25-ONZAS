@@ -158,6 +158,25 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Baileys The Original -->
+<div class="producto crema-whisky">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/c74bb89c5520ad41c2b1b6e242cdfb6e6a5c9d98/imagenes/cervezas_importadas/baileys.jpg.jpeg?raw=true"
+       alt="Baileys The Original">
+  <h3>Baileys The Original</h3>
+
+  <select id="baileysSelect" onchange="actualizarPrecio('baileysPrecio', this)">
+    <option value="375ml|53000">375 ml — $53.000</option>
+    <option value="750ml|83500">750 ml — $83.500</option>
+    <option value="1000ml|112000">1000 ml — $112.000</option>
+  </select>
+
+  <p id="baileysPrecio"><strong>$53.000</strong></p>
+
+  <button onclick="agregarPresentacion('Baileys The Original', 'baileysSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Brandy Casa Grajales -->
 <div class="producto brandy">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/cd3ab69938e95a3cfe14d9b03c38b6beb81b21d5/imagenes/cervezas_importadas/brandygrajales.jpg.jpeg?raw=true"
