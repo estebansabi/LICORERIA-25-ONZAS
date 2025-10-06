@@ -158,6 +158,24 @@
  <!-- PRODUCTOS -->
 <div class="productos" id="lista-productos">
 
+  <!-- Lider Verde -->
+<div class="producto aguardiente">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/01350a8d0ae4ebde3cb3551ffd5e87dee98bd608/imagenes/aguardiente/liderverde.jpg.jpeg?raw=true"
+       alt="Lider Verde">
+  <h3>Lider Verde</h3>
+
+  <select id="liderVerdeSelect" onchange="actualizarPrecio('liderVerdePrecio', this)">
+    <option value="375ml|25000">375 ml — $25.000</option>
+    <option value="750ml|45000">750 ml — $45.000</option>
+  </select>
+
+  <p id="liderVerdePrecio"><strong>$25.000</strong></p>
+
+  <button onclick="agregarPresentacion('Lider Verde', 'liderVerdeSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Brymor 750ml -->
 <div class="producto crema-whisky">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/dc209fb44cb21e28609fc4cbafd83b5720829f90/imagenes/cervezas_importadas/brymor.jpg.jpeg?raw=true"
