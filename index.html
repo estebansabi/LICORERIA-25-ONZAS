@@ -157,8 +157,24 @@
 
  <!-- PRODUCTOS -->
 
- 
+  <!-- Marlboro Rojo -->
+<div class="producto cigarrillos-vapeadores">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/8b9dd52427bde4042d27724b760e0b61d16f18de/imagenes/cigarillos_y_vapeadores/marlbororojo.jpg.jpeg?raw=true"
+       alt="Marlboro Rojo">
+  <h3>Marlboro Rojo</h3>
 
+  <select id="marlboroRojoSelect" onchange="actualizarPrecio('marlboroRojoPrecio', this)">
+    <option value="x10|6500">x10 — $6.500</option>
+    <option value="x20|13000">x20 — $13.000</option>
+  </select>
+
+  <p id="marlboroRojoPrecio"><strong>$6.500</strong></p>
+
+  <button onclick="agregarPresentacion('Marlboro Rojo', 'marlboroRojoSelect')">
+    Agregar al carrito
+  </button>
+</div>
+  
   <!-- Central 330ml -->
 <div class="producto cervezas-nacionales">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/03294435e322123f7dcb97452248f992f14bd606/cervezas_nacionales/central.jpg.jpeg?raw=true"
