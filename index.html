@@ -157,6 +157,24 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Tanqueray 750ml y 375ml -->
+<div class="producto ginebra">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/580e1838d05af5f83a7ab17bda5efcba23c59b37/imagenes/ginebras/tanqueray.jpg.jpeg?raw=true"
+       alt="Tanqueray">
+  <h3>Tanqueray</h3>
+
+  <select id="tanqueraySelect" onchange="actualizarPrecio('tanquerayPrecio', this)">
+    <option value="750ml|155000">750ml — $155.000</option>
+    <option value="375ml|90000">375ml — $90.000</option>
+  </select>
+
+  <p id="tanquerayPrecio"><strong>$155.000</strong></p>
+
+  <button onclick="agregarPresentacion('Tanqueray', 'tanqueraySelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Beefeater Original 750ml -->
 <div class="producto ginebra">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/2cc80746629bf4a9bff75405d61904cb18b23953/imagenes/ginebras/beefeater.jpg.jpeg?raw=true"
