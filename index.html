@@ -157,6 +157,24 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Gordons 750ml y 1500ml -->
+<div class="producto ginebra">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/d4348ef11d5111d6225ed8be07ce15e1352fcd5c/imagenes/ginebras/gordons.jpg.jpeg?raw=true"
+       alt="Gordons">
+  <h3>Gordons</h3>
+
+  <select id="gordonsSelect" onchange="actualizarPrecio('gordonsPrecio', this)">
+    <option value="750ml|77500">750ml — $77.500</option>
+    <option value="1500ml|142000">1500ml — $142.000</option>
+  </select>
+
+  <p id="gordonsPrecio"><strong>$77.500</strong></p>
+
+  <button onclick="agregarPresentacion('Gordons', 'gordonsSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Gordons Pink 750ml -->
 <div class="producto ginebra">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/4e35c30aea0e18f58bd5c1e4d40cb421e3871edd/imagenes/ginebras/gordonspink.jpg.jpeg?raw=true"
