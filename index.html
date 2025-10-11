@@ -157,6 +157,27 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Caldas Tradicional -->
+<div class="producto ron">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/cb8ca8b0beaf737bcfa6ab1c07104e2737d1b3fd/imagenes/ron/caldastradicional.jpg.jpeg?raw=true"
+       alt="Caldas Tradicional">
+  <h3>Caldas Tradicional</h3>
+
+  <select id="caldasTradicionalSelect" onchange="actualizarPrecio('caldasTradicionalPrecio', this)">
+    <option value="50ml|5500">50 ml — $5.500</option>
+    <option value="250ml|20000">250 ml — $20.000</option>
+    <option value="375ml|31000">375 ml — $31.000</option>
+    <option value="750ml|58500">750 ml — $58.500</option>
+    <option value="1000ml|74500">1000 ml — $74.500</option>
+  </select>
+
+  <p id="caldasTradicionalPrecio"><strong>$5.500</strong></p>
+
+  <button onclick="agregarPresentacion('Caldas Tradicional', 'caldasTradicionalSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Caldas Esencial 750ml -->
 <div class="producto ron">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/7cf02d7ee3f7288e15e3ae8de346f208c6003d62/imagenes/ron/caldasesencial.jpg.jpeg?raw=true"
