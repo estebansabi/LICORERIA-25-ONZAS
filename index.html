@@ -157,14 +157,20 @@
 
  <!-- PRODUCTOS -->
 
-  <!-- J.P Chenet Fashion Strawberry 750ml -->
+  <!-- J.P Chenet Fashion Strawberry -->
 <div class="producto espumosos-champagne">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/103660594848baa19b827c8ef0adafa2468ed7b7/imagenes/espumosos_y_champagne/chenetuva.jpg.jpeg?raw=true"
-       alt="J.P Chenet Fashion Strawberry 750ml">
-  <h3>J.P Chenet Fashion Strawberry 750ml</h3>
+       alt="J.P Chenet Fashion Strawberry">
+  <h3>J.P Chenet Fashion Strawberry</h3>
 
-  <p><strong>$66.000</strong></p>
-  <button onclick="agregarCarrito('J.P Chenet Fashion Strawberry 750ml', 66000)">
+  <select id="chenetStrawberrySelect" onchange="actualizarPrecio('chenetStrawberryPrecio', this)">
+    <option value="750ml|66000">750 ml — $66.000</option>
+    <option value="200ml|24000">200 ml — $24.000</option>
+  </select>
+
+  <p id="chenetStrawberryPrecio"><strong>$66.000</strong></p>
+
+  <button onclick="agregarPresentacion('J.P Chenet Fashion Strawberry', 'chenetStrawberrySelect')">
     Agregar al carrito
   </button>
 </div>
