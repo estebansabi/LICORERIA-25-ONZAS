@@ -169,17 +169,25 @@
   </button>
 </div>
 
-  <!-- J.P Chenet Fashion Cassis 750ml -->
+  <!-- J.P Chenet Fashion Cassis -->
 <div class="producto espumosos-champagne">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/d75530b662a31101ddb52646afc11ddd7e75d434/imagenes/espumosos_y_champagne/chenetrojo.jpg.jpeg?raw=true"
-       alt="J.P Chenet Fashion Cassis 750ml">
-  <h3>J.P Chenet Fashion Cassis 750ml</h3>
+       alt="J.P Chenet Fashion Cassis">
+  <h3>J.P Chenet Fashion Cassis</h3>
 
-  <p><strong>$66.000</strong></p>
-  <button onclick="agregarCarrito('J.P Chenet Fashion Cassis 750ml', 66000)">
+  <select id="chenetCassisSelect" onchange="actualizarPrecio('chenetCassisPrecio', this)">
+    <option value="750ml|66000">750 ml — $66.000</option>
+    <option value="200ml|24000">200 ml — $24.000</option>
+  </select>
+
+  <p id="chenetCassisPrecio"><strong>$66.000</strong></p>
+
+  <button onclick="agregarPresentacion('J.P Chenet Fashion Cassis', 'chenetCassisSelect')">
     Agregar al carrito
   </button>
 </div>
+
+ 
 
   <!-- Chandon Extra Brut 750ml -->
 <div class="producto espumosos-champagne">
