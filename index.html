@@ -267,11 +267,24 @@
   </button>
 </div>
 
-  <!-- Peterlongo Espuma de Patra Rosada-Blanca 2500ml -->
+  <!-- Peterlongo Espuma de Patra Rosada-Blanca -->
 <div class="producto espumosos-champagne">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/67d7a54c00f590b0804c8e0012fc7f0990d63549/imagenes/espumosos_y_champagne/peterlongogrande.jpg.jpeg?raw=true"
-       alt="Peterlongo Espuma de Patra Rosada-Blanca 2500ml">
-  <h3>Peterlongo Espuma de Patra Rosada-Blanca 2500ml</h3>
+       alt="Peterlongo Espuma de Patra Rosada-Blanca">
+  <h3>Peterlongo Espuma de Patra Rosada-Blanca</h3>
+
+  <select id="peterlongoPatraSelect" onchange="actualizarPrecio('peterlongoPatraPrecio', this)">
+    <option value="660ml|50000">660 ml — $50.000</option>
+    <option value="2500ml|153500">2500 ml — $153.500</option>
+  </select>
+
+  <p id="peterlongoPatraPrecio"><strong>$50.000</strong></p>
+
+  <button onclick="agregarPresentacion('Peterlongo Espuma de Patra Rosada-Blanca', 'peterlongoPatraSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
 
   <p><strong>$153.500</strong></p>
   <button onclick="agregarCarrito('Peterlongo Espuma de Patra Rosada-Blanca 2500ml', 153500)">
