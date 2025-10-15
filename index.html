@@ -157,6 +157,36 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Jimador Blanco 750ml -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/86fa1e786b372cba41dd0b6b2bd9beb5734caf77/imagenes/tequila_y_mezcal/jimadorblanco.jpg.jpeg?raw=true"
+       alt="Jimador Blanco 750ml">
+  <h3>Jimador Blanco 750ml</h3>
+
+  <p><strong>$119.500</strong></p>
+  <button onclick="agregarCarrito('Jimador Blanco 750ml', 119500)">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Jimador Reposado -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/86fa1e786b372cba41dd0b6b2bd9beb5734caf77/imagenes/tequila_y_mezcal/jimadorreposado.jpg.jpeg?raw=true"
+       alt="Jimador Reposado">
+  <h3>Jimador Reposado</h3>
+
+  <select id="jimadorReposadoSelect" onchange="actualizarPrecio('jimadorReposadoPrecio', this)">
+    <option value="750ml|125000">750 ml — $125.000</option>
+    <option value="375ml|75000">375 ml — $75.000</option>
+  </select>
+
+  <p id="jimadorReposadoPrecio"><strong>$125.000</strong></p>
+
+  <button onclick="agregarPresentacion('Jimador Reposado', 'jimadorReposadoSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Olmeca Altos Reposado 700ml -->
 <div class="producto tequila-mezcal">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/89d4180fdabefe0dd023de942fd007f4567dcc7c/imagenes/tequila_y_mezcal/olmecaaltos.jpg.jpeg?raw=true"
