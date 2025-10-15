@@ -157,6 +157,54 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Olmeca Silver -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/8f76c6936afd88ea34cac0481af9dbbbe2fdffcb/imagenes/tequila_y_mezcal/WhatsApp%20Image%202025-10-15%20at%204.03.54%20PM.jpeg?raw=true"
+       alt="Olmeca Silver">
+  <h3>Olmeca Silver</h3>
+
+  <select id="olmecaSilverSelect" onchange="actualizarPrecio('olmecaSilverPrecio', this)">
+    <option value="375ml|45000">375 ml — $45.000</option>
+    <option value="750ml|85000">750 ml — $85.000</option>
+  </select>
+
+  <p id="olmecaSilverPrecio"><strong>$45.000</strong></p>
+
+  <button onclick="agregarPresentacion('Olmeca Silver', 'olmecaSilverSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Olmeca Reposado -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/4050ac3d80665dd3097c23b23eb909afb99f6a16/imagenes/tequila_y_mezcal/olmecareposado.jpg.jpeg?raw=true"
+       alt="Olmeca Reposado">
+  <h3>Olmeca Reposado</h3>
+
+  <select id="olmecaReposadoSelect" onchange="actualizarPrecio('olmecaReposadoPrecio', this)">
+    <option value="375ml|45000">375 ml — $45.000</option>
+    <option value="700ml|85000">700 ml — $85.000</option>
+  </select>
+
+  <p id="olmecaReposadoPrecio"><strong>$45.000</strong></p>
+
+  <button onclick="agregarPresentacion('Olmeca Reposado', 'olmecaReposadoSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Olmeca Dark Chocolate 700ml -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/4050ac3d80665dd3097c23b23eb909afb99f6a16/imagenes/tequila_y_mezcal/olmecachocolate.jpg.jpeg?raw=true"
+       alt="Olmeca Dark Chocolate 700ml">
+  <h3>Olmeca Dark Chocolate 700ml</h3>
+
+  <p><strong>$89.000</strong></p>
+  <button onclick="agregarCarrito('Olmeca Dark Chocolate 700ml', 89000)">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Jose Cuervo Silver 750ml -->
 <div class="producto tequila-mezcal">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/72fe61272d9c3960fa7550d25a8409ce24965e32/imagenes/tequila_y_mezcal/cuervosilver.jpg.jpeg?raw=true"
