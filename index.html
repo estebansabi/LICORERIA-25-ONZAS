@@ -157,6 +157,49 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Jose Cuervo Silver 750ml -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/72fe61272d9c3960fa7550d25a8409ce24965e32/imagenes/tequila_y_mezcal/cuervosilver.jpg.jpeg?raw=true"
+       alt="Jose Cuervo Silver 750ml">
+  <h3>Jose Cuervo Silver 750ml</h3>
+
+  <p><strong>$84.500</strong></p>
+  <button onclick="agregarCarrito('Jose Cuervo Silver 750ml', 84500)">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Jose Cuervo Reposado -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/72fe61272d9c3960fa7550d25a8409ce24965e32/imagenes/tequila_y_mezcal/josecuervo.jpg.jpeg?raw=true"
+       alt="Jose Cuervo Reposado">
+  <h3>Jose Cuervo Reposado</h3>
+
+  <select id="joseCuervoReposadoSelect" onchange="actualizarPrecio('joseCuervoReposadoPrecio', this)">
+    <option value="375ml|52000">375 ml — $52.000</option>
+    <option value="750ml|84500">750 ml — $86.500</option>
+    <option value="1000ml|119000">1000 ml — $119.000</option>
+  </select>
+
+  <p id="joseCuervoReposadoPrecio"><strong>$52.000</strong></p>
+
+  <button onclick="agregarPresentacion('Jose Cuervo Reposado', 'joseCuervoReposadoSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Gran Centenario Plata 700ml -->
+<div class="producto tequila-mezcal">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/72fe61272d9c3960fa7550d25a8409ce24965e32/imagenes/tequila_y_mezcal/centenario.jpg.jpeg?raw=true"
+       alt="Gran Centenario Plata 700ml">
+  <h3>Gran Centenario Plata 700ml</h3>
+
+  <p><strong>$107.000</strong></p>
+  <button onclick="agregarCarrito('Gran Centenario Plata 700ml', 107000)">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Tres Caballos Reposado 750ml -->
 <div class="producto tequila-mezcal">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/a534c26b8fc8015c07e215b77b08dbe394f95831/imagenes/tequila_y_mezcal/caballosreposado.jpg.jpeg?raw=true"
