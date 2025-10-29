@@ -159,6 +159,69 @@
 
  <!-- PRODUCTOS -->
 
+  <!-- Frangelico Liqueur -->
+<div class="producto otros-licores">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b9a76ab0cb6c709429e0de244c2069ed0fb2ea73/imagenes/.otros_licores/frangelico.jpg.jpeg?raw=true"
+       alt="Frangelico Liqueur">
+  <h3>Frangelico Liqueur</h3>
+  <p><strong>$152.000</strong></p>
+  <button onclick="agregarCarrito('Frangelico Liqueur 700ml', 152000)">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Jagermeister -->
+<div class="producto otros-licores">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b9a76ab0cb6c709429e0de244c2069ed0fb2ea73/imagenes/.otros_licores/jagermeister.jpg.jpeg?raw=true"
+       alt="Jagermeister">
+  <h3>Jagermeister</h3>
+
+  <select id="jagermeisterSelect" onchange="actualizarPrecio('jagermeisterPrecio', this)">
+    <option value="375ml|78000">375 ml — $78.000</option>
+    <option value="700ml|128000">700 ml — $128.000</option>
+  </select>
+
+  <p id="jagermeisterPrecio"><strong>$78.000</strong></p>
+
+  <button onclick="agregarPresentacion('Jagermeister', 'jagermeisterSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Sangría Lolea No 2 -->
+<div class="producto otros-licores">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b9a76ab0cb6c709429e0de244c2069ed0fb2ea73/imagenes/.otros_licores/loleados.jpg.jpeg?raw=true"
+       alt="Sangría Lolea No 2">
+  <h3>Sangría Lolea No 2</h3>
+
+  <select id="loleaDosSelect" onchange="actualizarPrecio('loleaDosPrecio', this)">
+    <option value="750ml|71000">750 ml — $71.000</option>
+  </select>
+
+  <p id="loleaDosPrecio"><strong>$71.000</strong></p>
+
+  <button onclick="agregarPresentacion('Sangría Lolea No 2', 'loleaDosSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
+  <!-- Sangría Lolea No 1 -->
+<div class="producto otros-licores">
+  <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/b9a76ab0cb6c709429e0de244c2069ed0fb2ea73/imagenes/.otros_licores/loleauno.jpg.jpeg?raw=true"
+       alt="Sangría Lolea No 1">
+  <h3>Sangría Lolea No 1</h3>
+
+  <select id="loleaUnoSelect" onchange="actualizarPrecio('loleaUnoPrecio', this)">
+    <option value="750ml|71000">750 ml — $71.000</option>
+  </select>
+
+  <p id="loleaUnoPrecio"><strong>$71.000</strong></p>
+
+  <button onclick="agregarPresentacion('Sangría Lolea No 1', 'loleaUnoSelect')">
+    Agregar al carrito
+  </button>
+</div>
+
   <!-- Convier Triple Sec -->
 <div class="producto otros-licores">
   <img src="https://github.com/estebansabi/LICORERIA-25-ONZAS/blob/619696d015bef336a6b28c82a4d9e3760f943c1d/imagenes/.otros_licores/conviertriple.jpg.jpeg?raw=true"
